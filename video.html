@@ -15,10 +15,11 @@
             align-items: center;
             height: 100vh;
         }
-        video {
+        iframe {
             width: 100%;
             height: 100vh;
             background-color: black;
+            border: none;
         }
         #back-btn {
             position: absolute;
@@ -38,10 +39,9 @@
 </head>
 <body>
     <button id="back-btn" onclick="history.back()">رجوع</button>
-    <video id="video" controls autoplay>
-        <source id="video-source" type="video/mp4">
-        متصفحك لا يدعم تشغيل الفيديو.
-    </video>
+    
+    <!-- مشغل الفيديو باستخدام iframe -->
+    <iframe id="video-iframe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
     <script>
         // استخراج رابط الفيديو من عنوان URL
@@ -49,8 +49,8 @@
         const videoUrl = urlParams.get('url');
 
         if (videoUrl) {
-            document.getElementById("video-source").src = videoUrl;
-            document.getElementById("video").load();
+            const iframe = document.getElementById("video-iframe");
+            iframe.src = videoUrl; // تحديد مصدر iframe إلى رابط الفيديو
         }
     </script>
 </body>
