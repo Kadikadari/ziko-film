@@ -14,10 +14,6 @@ const films = {
 const featuredFilms = [
     { title: "فيلم مميز 1", image: "images/1.jpg", url: "https://ok.ru/videoembed/2950580537963" },
     { title: "فيلم مميز 2", image: "images/2.jpg", url: "https://ok.ru/videoembed/1264989833844" }
-     { title: "فيلم مميز 1", image: "images/1.jpg", url: "https://ok.ru/videoembed/2950580537963" },
-    { title: "فيلم مميز 2", image: "images/2.jpg", url: "https://ok.ru/videoembed/1264989833844" }
- { title: "فيلم مميز 1", image: "images/1.jpg", url: "https://ok.ru/videoembed/2950580537963" },
-    { title: "فيلم مميز 2", image: "images/2.jpg", url: "https://ok.ru/videoembed/1264989833844" }
 ];
 
 // عرض الأفلام حسب التصنيف
