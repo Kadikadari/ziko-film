@@ -30,7 +30,7 @@ const films = {
 
 // أفلام مميزة في الصفحة الرئيسية 
 const featuredFilms = [ 
-    { title: "فيلم مميز 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/2950580537963" }, 
+    { title: "فيلم مميز 1", image: "images/xut.jpg", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197" }, 
     { title: "فيلم مميز 2", image: "images/xut.jpg", url: "https://ok.ru/videoembed/1264989833844" } 
 ]; 
 
