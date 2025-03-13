@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* شريط العناوين */
 header {
     background-color: #333;
     padding: 10px;
@@ -13,46 +14,47 @@ header {
 
 nav ul {
     list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 0;
-    text-align: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 5px;
 }
 
+/* أزرار التصنيفات */
 .category-btn {
     background-color: #444;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 12px;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 .category-btn:hover {
     background-color: #666;
 }
 
-main {
-    text-align: center;
-    margin-top: 20px;
-}
-
+/* عرض الأفلام */
 .film-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
     justify-content: center;
-    gap: 20px;
 }
 
 .film-container img {
-    width: 150px;
-    height: 220px;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
     object-fit: cover;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 10px;
     transition: transform 0.3s;
 }
 
@@ -60,65 +62,19 @@ main {
     transform: scale(1.1);
 }
 
-#video-player {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
+/* استعلامات الوسائط لجعل الموقع متجاوبًا */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 
-#close-video-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    .category-btn {
+        width: 80%;
+        text-align: center;
+    }
 
-#close-video-btn:hover {
-    background-color: #666;
+    .film-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
 }
-/* ✅ ضبط تصميم القائمة العلوية */
-nav ul {
-    display: flex;
-    flex-wrap: wrap; /* يسمح للأزرار بالانتقال لسطر جديد عند الحاجة */
-    justify-content: center;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 5px; /* تقليل المسافة بين الأزرار على الشاشات الصغيرة */
-}
-
-/* ✅ تحسين تصميم الأزرار */
-.category-btn {
-    padding: 8px 12px; /* تصغير الأزرار قليلاً لجعلها مناسبة للهواتف */
-    font-size: 14px; /* تقليل حجم الخط قليلاً */
-}
-
-/* ✅ تحسين عرض الأفلام */
-.film-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* يجعل التخطيط متكيفًا */
-    gap: 10px; /* تقليل المسافات بين الصور */
-    padding: 10px;
-}
-
-.film-container img {
-    width: 100%;
-    height: auto;
-    max-width: 150px; /* تحديد أقصى عرض للصورة */
-    object-fit: cover;
-    border-radius: 8px;
-}
-
