@@ -8,10 +8,8 @@
     <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"> 
 </head>
 <body>
-    <!-- زر الرجوع -->
     <button id="back-btn" onclick="goBack()">رجوع</button>
 
-    <!-- شريط العناوين مع الأزرار الخاصة بالأفلام -->
     <header>
         <nav>
             <ul>
@@ -21,14 +19,16 @@
                 <li><button class="category-btn" onclick="showCategory('indian')">أفلام هندي</button></li>
                 <li><button class="category-btn" onclick="showCategory('asian')">أفلام أسيوي</button></li>
                 <li><button class="category-btn" onclick="showCategory('series')">مسلسلات</button></li>
-                <!-- زر الرئيسية -->
-                <li><button class="category-btn" onclick="showHomePage()">الرئيسية</button></li>
+                <li><button class="category-btn" onclick="showHomePage()">الرئيسية</button></li> <!-- زر الرئيسية -->
             </ul>
         </nav>
     </header>
 
-    <!-- حاوية الأفلام التي ستظهر في الصفحة الرئيسية -->
+    <!-- حاوية الأفلام المميزة -->
     <section id="home-films" class="film-container"></section>
+
+    <!-- حاوية الأفلام حسب التصنيف -->
+    <section id="film-container" class="film-container"></section>
 
     <script src="script.js"></script>
 </body>
