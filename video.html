@@ -38,7 +38,7 @@
     </style>
 </head>
 <body>
-    <button id="back-btn" onclick="history.back()">رجوع</button>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
     <iframe id="video-frame" allowfullscreen></iframe>
 
     <script>
@@ -47,14 +47,23 @@
         let videoUrl = urlParams.get('url');
 
         if (videoUrl) {
-            // إضافة معلمات التشغيل التلقائي
+            // إضافة التشغيل التلقائي
             if (videoUrl.includes("?")) {
-                videoUrl += "&autoplay=1"; // إذا كان الرابط يحتوي على بارامترات مسبقًا
+                videoUrl += "&autoplay=1"; 
             } else {
-                videoUrl += "?autoplay=1"; // إذا كان الرابط بدون بارامترات
+                videoUrl += "?autoplay=1";
             }
             
             document.getElementById("video-frame").src = videoUrl;
+        }
+
+        // وظيفة زر الرجوع مع التحقق
+        function goBack() {
+            if (document.referrer.includes(window.location.origin)) {
+                history.back(); // الرجوع إلى الصفحة السابقة داخل الموقع
+            } else {
+                window.location.href = "index.html"; // العودة إلى الصفحة الرئيسية إذا لم يكن هناك سجل سابق
+            }
         }
     </script>
 </body>
