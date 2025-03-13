@@ -32,7 +32,7 @@ asian: [
 };
 
 // أفلام مميزة في الصفحة الرئيسية
-const featuredFilms = [
+const featured-films = [
     { title: "فيلم مميز 1", image: "images/1.jpg", url: "https://ok.ru/videoembed/2950580537963" },
     { title: "فيلم مميز 2", image: "images/2.jpg", url: "https://ok.ru/videoembed/1264989833844" }
 ];
