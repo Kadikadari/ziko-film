@@ -3,10 +3,18 @@ const films = {
     arabic: [
         { title: "فيلم عربي 1", image: "images/1.jpg", url: "https://ok.ru/video/2950580537963" },
         { title: "فيلم عربي 2", image: "images/2.jpg", url: "https://ok.ru/video/1264989833844" }
+          { title: "فيلم عربي 1", image: "images/1.jpg", url: "https://ok.ru/video/2950580537963" },
+        { title: "فيلم عربي 2", image: "images/2.jpg", url: "https://ok.ru/video/1264989833844" }
+  { title: "فيلم عربي 1", image: "images/1.jpg", url: "https://ok.ru/video/2950580537963" },
+        { title: "فيلم عربي 2", image: "images/2.jpg", url: "https://ok.ru/video/1264989833844" }
     ],
     foreign: [
-        { title: "فيلم أجنبي 1", image: "images/3.jpg", url: "https://ok.ru/video/12348" },
-        { title: "فيلم أجنبي 2", image: "images/4.jpg", url: "https://ok.ru/video/12349" }
+        { title: "فيلم أجنبي 1", image: "images/2.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+        { title: "فيلم أجنبي 2", image: "images/2.jpg", url: "https://ok.ru/videoembed/2950580537963" }
+         { title: "فيلم أجنبي 1", image: "images/2.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+        { title: "فيلم أجنبي 2", image: "images/2.jpg", url: "https://ok.ru/videoembed/2950580537963" }
+ { title: "فيلم أجنبي 1", image: "images/2.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+        { title: "فيلم أجنبي 2", image: "images/2.jpg", url: "https://ok.ru/videoembed/2950580537963" }
     ]
 
    
