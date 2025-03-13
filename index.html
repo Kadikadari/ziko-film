@@ -1,3 +1,4 @@
+/* تحديث ملف index.html */
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -5,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ziko-Film</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- أيقونة الموقع -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- شريط العناوين -->
     <header>
         <nav>
             <ul>
@@ -22,8 +22,12 @@
         </nav>
     </header>
 
-    <!-- الشاشة الرئيسية -->
     <main id="main-content">
+        <h2>الأفلام المميزة</h2>
+        <div class="film-container" id="featured-films">
+            <!-- سيتم إدراج بعض الأفلام هنا تلقائيًا -->
+        </div>
+
         <h2>الأفلام</h2>
         <div class="film-container" id="film-container">
             <!-- سيتم إضافة صور الأفلام هنا ديناميكيًا -->
@@ -31,5 +35,101 @@
     </main>
 
     <script src="script.js"></script>
+</body>
+</html>
+
+/* تحديث ملف script.js */
+const films = {
+    arabic: [
+        { title: "فيلم عربي 1", image: "images/1.jpg", url: "https://ok.ru/video/2950580537963" },
+        { title: "فيلم عربي 2", image: "images/2.jpg", url: "https://ok.ru/video/1264989833844" },
+        { title: "فيلم عربي 3", image: "https://via.placeholder.com/150x220.png?text=Arabic+3", url: "https://ok.ru/video/12347" }
+    ],
+    foreign: [
+        { title: "فيلم أجنبي 1", image: "https://via.placeholder.com/150x220.png?text=Foreign+1", url: "https://ok.ru/video/12348" }
+    ]
+};
+
+function showCategory(category) {
+    const container = document.getElementById("film-container");
+    container.innerHTML = "";
+    films[category].forEach(film => {
+        const filmElement = document.createElement("img");
+        filmElement.src = film.image;
+        filmElement.alt = film.title;
+        filmElement.onclick = () => openVideoPage(film.url);
+        container.appendChild(filmElement);
+    });
+}
+
+function openVideoPage(videoUrl) {
+    window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    showCategory('arabic');
+});
+
+/* تحديث ملف video.html */
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاهدة الفيلم</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+        #back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #back-btn:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
+    <iframe id="video-frame" allowfullscreen></iframe>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let videoUrl = urlParams.get('url');
+
+        if (videoUrl) {
+            if (videoUrl.includes("?")) {
+                videoUrl += "&autoplay=1"; 
+            } else {
+                videoUrl += "?autoplay=1";
+            }
+            document.getElementById("video-frame").src = videoUrl;
+        }
+
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
 </body>
 </html>
