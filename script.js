@@ -31,6 +31,15 @@ const featuredFilms = [
     { title: "فيلم مميز 1", image: "images/13.jpg", url: "https://ok.ru/videoembed/2950580537963" },
     { title: "فيلم مميز 2", image: "images/14.jpg", url: "https://ok.ru/videoembed/1264989833844" }
 ];
+function goBack() {
+    if (document.referrer.includes(window.location.origin)) {
+        history.back(); // الرجوع إلى الصفحة السابقة داخل الموقع
+    } else {
+        window.location.href = "index.html"; // العودة إلى الصفحة الرئيسية إذا لم يكن هناك سجل سابق
+    }
+}
+
+
 
 // عرض الأفلام حسب التصنيف
 function showCategory(category) {
