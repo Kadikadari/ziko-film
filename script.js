@@ -28,7 +28,11 @@ const films = {
     ] 
 }; 
  
-
+// أفلام مميزة في الصفحة الرئيسية 
+const featuredFilms = [ 
+    { title: "فيلم مميز 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/2950580537963" }, 
+    { title: "فيلم مميز 2", image: "images/xut.jpg", url: "https://ok.ru/videoembed/1264989833844" } 
+]; 
  
 function goBack() { 
     if (document.referrer.includes(window.location.origin)) { 
@@ -58,7 +62,22 @@ function showCategory(category) {
     }); 
 } 
  
-
+// عرض الأفلام المميزة فقط في الصفحة الرئيسية
+function showFeaturedFilms() { 
+    if (window.location.pathname === "/index.html") {  // التأكد أن الصفحة هي الصفحة الرئيسية
+        const container = document.getElementById("featured-films"); 
+        container.innerHTML = ""; 
+ 
+        featuredFilms.forEach(film => { 
+            const filmElement = document.createElement("img"); 
+            filmElement.src = film.image; 
+            filmElement.alt = film.title; 
+            filmElement.classList.add("film-image"); 
+            filmElement.onclick = () => openVideoPage(film.url); 
+            container.appendChild(filmElement); 
+        }); 
+    }
+} 
  
 // فتح صفحة تشغيل الفيديو 
 function openVideoPage(videoUrl) { 
