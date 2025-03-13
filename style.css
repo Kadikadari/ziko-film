@@ -86,6 +86,23 @@ nav ul li {
             } else {
                  window.location.href = "index.html";
             }
+
+
+          /* تنسيق الصور */
+.film-image {
+    margin: 10px;  /* المسافة بين الصور */
+    width: 150px;  /* عرض الصورة */
+    height: 150px; /* ارتفاع الصورة */
+    transition: transform 0.3s, border 0.3s; /* تأثير التحول والإطار */
+    border-radius: 8px;  /* زوايا دائرية للصورة */
+}
+
+/* عند تمرير المؤشر على الصورة (hover) */
+.film-image:hover {
+    transform: scale(1.1); /* زيادة حجم الصورة */
+    border: 3px solid gold; /* إضافة إطار ذهبي */
+}
+
           
 
 @media (max-width: 600px) {
