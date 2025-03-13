@@ -56,6 +56,7 @@ function showCategory(category) {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
+        filmElement.classList.add("film-image");
         filmElement.onclick = () => openVideoPage(film.url);
         container.appendChild(filmElement);
     });
@@ -70,6 +71,7 @@ function showFeaturedFilms() {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
+        filmElement.classList.add("film-image");
         filmElement.onclick = () => openVideoPage(film.url);
         container.appendChild(filmElement);
     });
