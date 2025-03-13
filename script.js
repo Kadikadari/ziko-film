@@ -28,11 +28,7 @@ const films = {
     ] 
 }; 
  
-// أفلام مميزة في الصفحة الرئيسية 
-const featuredFilms = [ 
-    { title: "فيلم مميز 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/2950580537963" }, 
-    { title: "فيلم مميز 2", image: "images/xut.jpg", url: "https://ok.ru/videoembed/1264989833844" } 
-]; 
+
  
 function goBack() { 
     if (document.referrer.includes(window.location.origin)) { 
