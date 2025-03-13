@@ -7,6 +7,24 @@ body {
     padding: 0;
 }
 
+#back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#back-btn:hover {
+    background-color: #666;
+}
+
+
 /* شريط العناوين */
 header {
     background-color: #333;
