@@ -1,85 +1,56 @@
-// بيانات الأفلام (روابط وهمية - يمكنك استبدالها بروابط حقيقية من ok.ru)
+// بيانات الأفلام
 const films = {
     arabic: [
-        { title: "فيلم عربي 1", image: "images/1.jpg?text=Arabic+1", url: "https://ok.ru/videoembed/2950580537963" },
-        { title: "فيلم عربي 2", image: "images/2.jpg?text=Arabic+2", url: "https://ok.ru/videoembed/1264989833844" },
-        { title: "فيلم عربي 3", image: "https://via.placeholder.com/150x220.png?text=Arabic+3", url: "https://ok.ru/video/12347" }
+        { title: "فيلم عربي 1", image: "images/1.jpg", url: "https://ok.ru/video/2950580537963" },
+        { title: "فيلم عربي 2", image: "images/2.jpg", url: "https://ok.ru/video/1264989833844" }
     ],
     foreign: [
-        { title: "فيلم أجنبي 1", image: "https://via.placeholder.com/150x220.png?text=Foreign+1", url: "https://ok.ru/video/12348" },
-        { title: "فيلم أجنبي 2", image: "https://via.placeholder.com/150x220.png?text=Foreign+2", url: "https://ok.ru/video/12349" },
-        { title: "فيلم أجنبي 3", image: "https://via.placeholder.com/150x220.png?text=Foreign+3", url: "https://ok.ru/video/12350" }
-    ],
-    turkish: [
-        { title: "فيلم تركي 1", image: "https://via.placeholder.com/150x220.png?text=Turkish+1", url: "https://ok.ru/video/12351" },
-        { title: "فيلم تركي 2", image: "https://via.placeholder.com/150x220.png?text=Turkish+2", url: "https://ok.ru/video/12352" },
-        { title: "فيلم تركي 3", image: "https://via.placeholder.com/150x220.png?text=Turkish+3", url: "https://ok.ru/video/12353" }
-    ],
-    indian: [
-        { title: "فيلم هندي 1", image: "https://via.placeholder.com/150x220.png?text=Indian+1", url: "https://ok.ru/video/12354" },
-        { title: "فيلم هندي 2", image: "https://via.placeholder.com/150x220.png?text=Indian+2", url: "https://ok.ru/video/12355" },
-        { title: "فيلم هندي 3", image: "https://via.placeholder.com/150x220.png?text=Indian+3", url: "https://ok.ru/video/12356" }
-    ],
-    asian: [
-        { title: "فيلم أسيوي 1", image: "https://via.placeholder.com/150x220.png?text=Asian+1", url: "https://ok.ru/video/12357" },
-        { title: "فيلم أسيوي 2", image: "https://via.placeholder.com/150x220.png?text=Asian+2", url: "https://ok.ru/video/12358" },
-        { title: "فيلم أسيوي 3", image: "https://via.placeholder.com/150x220.png?text=Asian+3", url: "https://ok.ru/video/12359" }
-    ],
-    series: [
-        { title: "مسلسل 1", image: "https://via.placeholder.com/150x220.png?text=Series+1", url: "https://ok.ru/video/12360" },
-        { title: "مسلسل 2", image: "https://via.placeholder.com/150x220.png?text=Series+2", url: "https://ok.ru/video/12361" },
-        { title: "مسلسل 3", image: "https://via.placeholder.com/150x220.png?text=Series+3", url: "https://ok.ru/video/12362" }
+        { title: "فيلم أجنبي 1", image: "images/3.jpg", url: "https://ok.ru/video/12348" },
+        { title: "فيلم أجنبي 2", image: "images/4.jpg", url: "https://ok.ru/video/12349" }
     ]
 };
 
-// دالة لعرض الأفلام حسب التصنيف
+// أفلام مميزة في الصفحة الرئيسية
+const featuredFilms = [
+    { title: "فيلم مميز 1", image: "images/featured1.jpg", url: "https://ok.ru/video/featured1" },
+    { title: "فيلم مميز 2", image: "images/featured2.jpg", url: "https://ok.ru/video/featured2" }
+];
+
+// عرض الأفلام حسب التصنيف
 function showCategory(category) {
     const container = document.getElementById("film-container");
-    container.innerHTML = ""; // مسح المحتوى الحالي
+    container.innerHTML = "";
 
-    // إضافة الأفلام حسب التصنيف
     films[category].forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
-        filmElement.onclick = () => openFullScreen(film); // عند الضغط على الصورة، يتم تشغيل الفيديو في شاشة كاملة
+        filmElement.onclick = () => openVideoPage(film.url);
         container.appendChild(filmElement);
     });
 }
 
-// دالة لفتح الفيديو في شاشة كاملة عبر `iframe`
-function openFullScreen(film) {
-    const videoPlayer = document.getElementById("video-player");
-    const iframe = document.createElement("iframe");
+// عرض الأفلام المميزة في الصفحة الرئيسية
+function showFeaturedFilms() {
+    const container = document.getElementById("featured-films");
+    container.innerHTML = "";
 
-    // تحديد رابط الفيديو من `ok.ru`
-    iframe.src = `https://ok.ru/videoembed/${film.url.split('/').pop()}`;
-    iframe.style.width = "100%";
-    iframe.style.height = "100vh";
-    iframe.style.border = "none";
-
-    // إضافة الـ `iframe` إلى الشاشة
-    videoPlayer.innerHTML = ""; // تنظيف محتوى الفيديو
-    videoPlayer.appendChild(iframe);
-
-    videoPlayer.style.display = "flex"; // إظهار الفيديو في شاشة كاملة
+    featuredFilms.forEach(film => {
+        const filmElement = document.createElement("img");
+        filmElement.src = film.image;
+        filmElement.alt = film.title;
+        filmElement.onclick = () => openVideoPage(film.url);
+        container.appendChild(filmElement);
+    });
 }
 
-// دالة لإغلاق الفيديو
-function closeVideo() {
-    const videoPlayer = document.getElementById("video-player");
-    videoPlayer.style.display = "none"; // إخفاء الفيديو
-}
-// دالة لفتح صفحة تشغيل الفيديو
+// فتح صفحة تشغيل الفيديو
 function openVideoPage(videoUrl) {
     window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
 }
 
-// عند تحميل الصفحة، عرض الأفلام بشكل افتراضي
+// عند تحميل الصفحة، عرض الأفلام العربية افتراضيًا والأفلام المميزة
 document.addEventListener("DOMContentLoaded", () => {
-    showCategory('arabic'); // عرض أفلام عربي افتراضيًا
+    showCategory('arabic');
+    showFeaturedFilms();
 });
-// تحميل الأفلام عند تحميل الصفحة
-window.onload = function() {
-    showCategory("arabic"); // عرض الأفلام العربية بشكل افتراضي عند تحميل الصفحة
-};
