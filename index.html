@@ -30,19 +30,11 @@
     </main>
 
     <!-- قسم لعرض الفيديو عند الضغط على صورة فيلم (شاشة كاملة) -->
-    <div id="video-player" style="display:none;">
-        <video id="video" controls style="width:100%; height:100vh; background-color: black;">
-            <source id="video-source" type="video/mp4">
-            متصفحك لا يدعم الفيديو.
-        </video>
+    <div id="video-player" style="display:none; justify-content: center; align-items: center;">
+        <!-- سيتم إضافة الـ iframe هنا بشكل ديناميكي عند الضغط على صورة فيلم -->
         <button id="close-video-btn" onclick="closeVideo()">إغلاق الفيديو</button>
     </div>
 
-    <script src="script.js">
-document.addEventListener("DOMContentLoaded", function () {
-    showCategory('arabic'); // عرض الأفلام العربية تلقائيًا عند تحميل الصفحة
-});
-        
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
