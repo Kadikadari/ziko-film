@@ -1,13 +1,13 @@
 // بيانات الأفلام
 const films = {
     arabic: [
-        { title: "فيلم عربي 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/973282806388" },
-        { title: "فيلم عربي 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/977388243572" }
-         { title: "فيلم عربي 3", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/979790137972" },
-        { title: "فيلم عربي 4", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/980295092852" }
+        { title: "فيلم عربي 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/973282806388" },
+        { title: "فيلم عربي 2", image: "images/xut.jpg", url: "https://ok.ru/videoembed/977388243572" }
+         { title: "فيلم عربي 3", image: "images/xut.jpg", url: "https://ok.ru/videoembed/979790137972" },
+        { title: "فيلم عربي 4", image: "images/xut.jpg", url: "https://ok.ru/videoembed/980295092852" }
     ],
     foreign: [
-        { title: "فيلم أجنبي 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+        { title: "فيلم أجنبي 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/2950580537963" },
         { title: "فيلم أجنبي 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/1264989833844" }
     ],
     turkish: [
@@ -30,8 +30,8 @@ const films = {
 
 // أفلام مميزة في الصفحة الرئيسية
 const featuredFilms = [
-    { title: "فيلم مميز 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/2950580537963" },
-    { title: "فيلم مميز 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/1264989833844" }
+    { title: "فيلم مميز 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+    { title: "فيلم مميز 2", image: "images/xut.jpg", url: "https://ok.ru/videoembed/1264989833844" }
 ];
 function goBack() {
     if (document.referrer.includes(window.location.origin)) {
