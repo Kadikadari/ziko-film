@@ -1,8 +1,8 @@
 // بيانات الأفلام (روابط وهمية - يمكنك استبدالها بروابط حقيقية من ok.ru)
 const films = {
     arabic: [
-        { title: "فيلم عربي 1", image: "https://via.placeholder.com/150x220.png?text=Arabic+1", url: "https://ok.ru/video/12345" },
-        { title: "فيلم عربي 2", image: "https://via.placeholder.com/150x220.png?text=Arabic+2", url: "https://ok.ru/video/12346" },
+        { title: "فيلم عربي 1", image: "images/1.jpg?text=Arabic+1", url: "https://ok.ru/videoembed/2950580537963" },
+        { title: "فيلم عربي 2", image: "images/2.jpg?text=Arabic+2", url: "https://ok.ru/videoembed/1264989833844" },
         { title: "فيلم عربي 3", image: "https://via.placeholder.com/150x220.png?text=Arabic+3", url: "https://ok.ru/video/12347" }
     ],
     foreign: [
