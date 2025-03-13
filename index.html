@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziko-Film</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- شريط العناوين -->
+    <header>
+        <nav>
+            <ul>
+                <li><button class="category-btn" onclick="showCategory('arabic')">أفلام عربي</button></li>
+                <li><button class="category-btn" onclick="showCategory('foreign')">أفلام أجنبي</button></li>
+                <li><button class="category-btn" onclick="showCategory('turkish')">أفلام تركي</button></li>
+                <li><button class="category-btn" onclick="showCategory('indian')">أفلام هندي</button></li>
+                <li><button class="category-btn" onclick="showCategory('asian')">أفلام أسيوي</button></li>
+                <li><button class="category-btn" onclick="showCategory('series')">مسلسلات</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- الشاشة الرئيسية -->
+    <main id="main-content">
+        <h2>الافلام</h2>
+        <div class="film-container" id="film-container">
+            <!-- سيتم إضافة صور الأفلام هنا ديناميكيًا باستخدام JavaScript -->
+        </div>
+    </main>
+
+    <!-- قسم لعرض الفيديو عند الضغط على صورة فيلم (شاشة كاملة) -->
+    <div id="video-player" style="display:none;">
+        <video id="video" controls style="width:100%; height:100vh; background-color: black;">
+            <source id="video-source" type="video/mp4">
+            متصفحك لا يدعم الفيديو.
+        </video>
+        <button id="close-video-btn" onclick="closeVideo()">إغلاق الفيديو</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
