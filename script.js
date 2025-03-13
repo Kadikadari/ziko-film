@@ -1,37 +1,37 @@
 // بيانات الأفلام
 const films = {
     arabic: [
-        { title: "فيلم عربي 1", image: "الخط.jpg", url: "https://ok.ru/videoembed/973282806388" },
-        { title: "فيلم عربي 2", image: "رمضان.jpg", url: "https://ok.ru/videoembed/977388243572" }
-         { title: "فيلم عربي 3", image: "كركون.jpg", url: "https://ok.ru/videoembed/979790137972" },
-        { title: "فيلم عربي 4", image: "مرجان.jpg", url: "https://ok.ru/videoembed/980295092852" }
+        { title: "فيلم عربي 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/973282806388" },
+        { title: "فيلم عربي 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/977388243572" }
+         { title: "فيلم عربي 3", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/979790137972" },
+        { title: "فيلم عربي 4", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/980295092852" }
     ],
     foreign: [
-        { title: "فيلم أجنبي 1", image: "مرجان.jpg", url: "https://ok.ru/videoembed/2950580537963" },
-        { title: "فيلم أجنبي 2", image: "مرجان.jpg", url: "https://ok.ru/videoembed/1264989833844" }
+        { title: "فيلم أجنبي 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+        { title: "فيلم أجنبي 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/1264989833844" }
     ],
     turkish: [
-        { title: "فيلم تركي 1", image: "مرجان.jpg", url: "https://ok.ru/video/12348" },
-        { title: "فيلم تركي 2", image: "مرجان.jpg", url: "https://ok.ru/video/12349" }
+        { title: "فيلم تركي 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/video/12348" },
+        { title: "فيلم تركي 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/video/12349" }
     ],
     indian: [
-        { title: "فيلم هندي 1", image: "مرجان.jpg", url: "https://ok.ru/video/22348" },
-        { title: "فيلم هندي 2", image: "مرجان.jpg", url: "https://ok.ru/video/22349" }
+        { title: "فيلم هندي 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/video/22348" },
+        { title: "فيلم هندي 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/video/22349" }
     ],
     asian: [
-        { title: "فيلم أسيوي 1", image: "مرجان.jpg", url: "https://ok.ru/video/32348" },
-        { title: "فيلم أسيوي 2", image: "مرجان.jpg", url: "https://ok.ru/video/32349" }
+        { title: "فيلم أسيوي 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/video/32348" },
+        { title: "فيلم أسيوي 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/video/32349" }
     ],
     series: [
-        { title: "مسلسل 1", image: "مرجان.jpg", url: "https://ok.ru/video/42348" },
-        { title: "مسلسل 2", image: "مرجان.jpg", url: "https://ok.ru/video/42349" }
+        { title: "مسلسل 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/video/42348" },
+        { title: "مسلسل 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/video/42349" }
     ]
 };
 
 // أفلام مميزة في الصفحة الرئيسية
 const featuredFilms = [
-    { title: "فيلم مميز 1", image: "مرجان.jpg", url: "https://ok.ru/videoembed/2950580537963" },
-    { title: "فيلم مميز 2", image: "مرجان.jpg", url: "https://ok.ru/videoembed/1264989833844" }
+    { title: "فيلم مميز 1", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+    { title: "فيلم مميز 2", image: "images/xut.jpg.jpg", url: "https://ok.ru/videoembed/1264989833844" }
 ];
 function goBack() {
     if (document.referrer.includes(window.location.origin)) {
