@@ -88,3 +88,37 @@ main {
 #close-video-btn:hover {
     background-color: #666;
 }
+/* ✅ ضبط تصميم القائمة العلوية */
+nav ul {
+    display: flex;
+    flex-wrap: wrap; /* يسمح للأزرار بالانتقال لسطر جديد عند الحاجة */
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 5px; /* تقليل المسافة بين الأزرار على الشاشات الصغيرة */
+}
+
+/* ✅ تحسين تصميم الأزرار */
+.category-btn {
+    padding: 8px 12px; /* تصغير الأزرار قليلاً لجعلها مناسبة للهواتف */
+    font-size: 14px; /* تقليل حجم الخط قليلاً */
+}
+
+/* ✅ تحسين عرض الأفلام */
+.film-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* يجعل التخطيط متكيفًا */
+    gap: 10px; /* تقليل المسافات بين الصور */
+    padding: 10px;
+}
+
+.film-container img {
+    width: 100%;
+    height: auto;
+    max-width: 150px; /* تحديد أقصى عرض للصورة */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
