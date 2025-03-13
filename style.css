@@ -1,12 +1,13 @@
 /* تنسيق الصفحة */
 body {
-    background-color: black;
+    background-color: #121212; /* خلفية داكنة */
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* زر الرجوع */
 #back-btn {
     position: absolute;
     top: 20px;
@@ -15,13 +16,15 @@ body {
     background-color: #444;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #back-btn:hover {
     background-color: #666;
+    transform: scale(1.05);
 }
 
 /* شريط العناوين */
@@ -30,6 +33,7 @@ header {
     padding: 10px;
 }
 
+/* التنقل */
 nav ul {
     list-style-type: none;
     display: flex;
@@ -44,63 +48,85 @@ nav ul li {
 
 /* أزرار التصنيفات */
 .category-btn {
-    background-color: #444;
+    background-color: #555;
     border: none;
     color: white;
-    padding: 8px 12px;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .category-btn:hover {
-    background-color: #666;
+    background-color: #777;
+    transform: scale(1.1);
 }
 
 /* عرض الأفلام */
 .film-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
     justify-content: center;
 }
 
 .film-container img {
     width: 100%;
-    max-width: 150px;
+    max-width: 200px;
     height: auto;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, border 0.3s ease;
 }
 
 /* عند تمرير المؤشر على الصورة (hover) */
 .film-container img:hover {
     transform: scale(1.1);
-    border: 3px solid gold; /* إضافة إطار ذهبي */
+    border: 5px solid #FFD700; /* إضافة إطار ذهبي */
 }
 
 /* تنسيق الصور */
 .film-image {
-    margin: 10px;  /* المسافة بين الصور */
-    width: 150px;  /* عرض الصورة */
-    height: 150px; /* ارتفاع الصورة */
-    transition: transform 0.3s, border 0.3s; /* تأثير التحول والإطار */
-    border-radius: 8px;  /* زوايا دائرية للصورة */
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border-radius: 10px;
 }
 
 /* عند تمرير المؤشر على الصورة (hover) */
 .film-image:hover {
-    transform: scale(1.1); /* زيادة حجم الصورة */
-    border: 3px solid gold; /* إضافة إطار ذهبي */
+    transform: scale(1.1);
+    border: 3px solid #FFD700; /* إضافة إطار ذهبي */
 }
 
-/* الوسائط المتعددة */
+/* الوسائط المتعددة (responsive) */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
         align-items: center;
     }
+    
+    .film-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+/* إضافة تأثيرات على الأزرار داخل التنقل */
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: #444;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #666;
+    transform: scale(1.05);
 }
