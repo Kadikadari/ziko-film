@@ -70,7 +70,15 @@ function closeVideo() {
     const videoPlayer = document.getElementById("video-player");
     videoPlayer.style.display = "none"; // إخفاء الفيديو
 }
+// دالة لفتح صفحة تشغيل الفيديو
+function openVideoPage(videoUrl) {
+    window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+}
 
+// عند تحميل الصفحة، عرض الأفلام بشكل افتراضي
+document.addEventListener("DOMContentLoaded", () => {
+    showCategory('arabic'); // عرض أفلام عربي افتراضيًا
+});
 // تحميل الأفلام عند تحميل الصفحة
 window.onload = function() {
     showCategory("arabic"); // عرض الأفلام العربية بشكل افتراضي عند تحميل الصفحة
