@@ -59,3 +59,7 @@ function closeVideo() {
     const videoPlayer = document.getElementById("video-player");
     videoPlayer.style.display = "none"; // إخفاء الفيديو
 }
+window.onpopstate = function () {
+    // عند الضغط على زر الرجوع، العودة للصفحة السابقة دون الخروج من الموقع
+    history.back();
+};
