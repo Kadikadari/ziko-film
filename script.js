@@ -8,6 +8,27 @@ const films = {
         { title: "فيلم أجنبي 1", image: "images/3.jpg", url: "https://ok.ru/video/12348" },
         { title: "فيلم أجنبي 2", image: "images/4.jpg", url: "https://ok.ru/video/12349" }
     ]
+
+   
+
+turkish: [
+        { title: "فيلم تركي 1", image: "images/3.jpg", url: "https://ok.ru/video/12348" },
+        { title: "فيلم تركي 2", image: "images/4.jpg", url: "https://ok.ru/video/12349" }
+    ]
+
+indian: [
+        { title: "فيلم هندي 1", image: "images/3.jpg", url: "https://ok.ru/video/12348" },
+        { title: "فيلم هندي 2", image: "images/4.jpg", url: "https://ok.ru/video/12349" }
+    ]
+
+asian: [
+        { title: "فيلم أسيوي 1", image: "images/3.jpg", url: "https://ok.ru/video/12348" },
+        { title: "فيلم أسيوي 2", image: "images/4.jpg", url: "https://ok.ru/video/12349" }
+    ]
+ series: [
+        { title: "مسلسلات  1", image: "images/3.jpg", url: "https://ok.ru/video/12348" },
+        { title: " مسلسلات 2", image: "images/4.jpg", url: "https://ok.ru/video/12349" }
+    ]
 };
 
 // أفلام مميزة في الصفحة الرئيسية
