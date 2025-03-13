@@ -24,7 +24,6 @@ body {
     background-color: #666;
 }
 
-
 /* شريط العناوين */
 header {
     background-color: #333;
@@ -77,18 +76,13 @@ nav ul li {
     transition: transform 0.3s;
 }
 
- function goBack() {
+/* عند تمرير المؤشر على الصورة (hover) */
 .film-container img:hover {
     transform: scale(1.1);
+    border: 3px solid gold; /* إضافة إطار ذهبي */
 }
-      if (window.history.length > 1) {
-            window.history.back();
-            } else {
-                 window.location.href = "index.html";
-            }
 
-
-          /* تنسيق الصور */
+/* تنسيق الصور */
 .film-image {
     margin: 10px;  /* المسافة بين الصور */
     width: 150px;  /* عرض الصورة */
@@ -103,8 +97,7 @@ nav ul li {
     border: 3px solid gold; /* إضافة إطار ذهبي */
 }
 
-          
-
+/* الوسائط المتعددة */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
