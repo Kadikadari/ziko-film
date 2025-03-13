@@ -63,51 +63,8 @@ nav ul li {
     transform: scale(1.1);
 }
 
-/* الأفلام المميزة في الصفحة الرئيسية */
-.featured-container {
-    text-align: center;
-    padding: 20px;
-}
-
-.featured-container h2 {
-    margin-bottom: 10px;
-}
-
-.featured-films {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.featured-films img {
-    width: 150px;
-    height: 220px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.featured-films img:hover {
-    transform: scale(1.1);
-}
-
-/* استعلامات الوسائط لجعل الموقع متجاوبًا */
 @media (max-width: 600px) {
     nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .category-btn {
-        width: 80%;
-        text-align: center;
-    }
-
-    .film-container {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    .featured-films {
         flex-direction: column;
         align-items: center;
     }
