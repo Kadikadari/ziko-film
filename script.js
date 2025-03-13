@@ -82,3 +82,4 @@ function openVideoPage(videoUrl) {
 document.addEventListener("DOMContentLoaded", () => {
     showHomePage(); // عرض الأفلام المميزة عند تحميل الصفحة
 });
+
