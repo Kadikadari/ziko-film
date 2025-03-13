@@ -23,7 +23,7 @@ const films = {
         { title: "فيلم أسيوي 2", image: "images/xut.jpg", url: "https://ok.ru/video/32349" } 
     ], 
     series: [ 
-        { title: "مسلسل 1", image: "images/xut.jpg", url: "https://ok.ru/video/42348" }, 
+        { title: "مسلسل 1", image: "images/xut.jpg", url: "series.html" }, 
         { title: "مسلسل 2", image: "images/xut.jpg", url: "https://ok.ru/video/42349" } 
     ] 
 }; 
