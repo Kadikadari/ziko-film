@@ -3,23 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مسلسل 1</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>حلقة المسلسل</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <button id="back-btn" onclick="goBack()">رجوع</button>
+
     <header>
-        <h1>مسلسل 1</h1>
+        <h1 id="series-title">عنوان المسلسل</h1>
     </header>
 
-    <div class="film-container">
-        <!-- إضافة حلقات المسلسل -->
-        <img src="images/رمضان.jpg" alt="حلقة 1" class="film-image" onclick="openVideoPage('https://ok.ru/video/episode1')">
-        <img src="images/رمضان.jpg" alt="حلقة 2" class="film-image" onclick="openVideoPage('https://ok.ru/video/episode2')">
-        <img src="images/رمضان.jpg" alt="حلقة 3" class="film-image" onclick="openVideoPage('https://ok.ru/video/episode3')">
-        <!-- ... المزيد من الحلقات -->
+    <div id="episode-container">
+        <!-- الحلقات ستظهر هنا -->
     </div>
 
-    <script src="../script.js"></script>
+    <div id="video-container">
+        <!-- سيتم عرض الفيديو هنا -->
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const seriesName = urlParams.get('series');
+        const episodes = {
+            "مسلسل1": [
+                { title: "الحلقة 1", videoUrl: "https://ok.ru/videoembed/12345678" },
+                { title: "الحلقة 2", videoUrl: "https://ok.ru/videoembed/12345679" }
+            ],
+            "مسلسل2": [
+                { title: "الحلقة 1", videoUrl: "https://ok.ru/videoembed/98765432" },
+                { title: "الحلقة 2", videoUrl: "https://ok.ru/videoembed/98765433" }
+            ]
+        };
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function loadEpisodes() {
+            if (!episodes[seriesName]) {
+                document.getElementById("episode-container").innerHTML = "<p>المسلسل غير موجود!</p>";
+                return;
+            }
+
+            const container = document.getElementById("episode-container");
+            const seriesTitle = document.getElementById("series-title");
+            seriesTitle.textContent = seriesName; // تعيين عنوان المسلسل
+
+            episodes[seriesName].forEach(episode => {
+                const episodeElement = document.createElement("button");
+                episodeElement.textContent = episode.title;
+                episodeElement.onclick = () => loadEpisode(episode.videoUrl);
+                container.appendChild(episodeElement);
+            });
+        }
+
+        function loadEpisode(videoUrl) {
+            const videoContainer = document.getElementById("video-container");
+            videoContainer.innerHTML = `<iframe src="${videoUrl}" width="100%" height="600px" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        }
+
+        window.onload = loadEpisodes;
+    </script>
+
 </body>
 </html>
