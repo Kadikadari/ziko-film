@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسلسل 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"> 
+</head>
+<body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
+    <h1>مسلسل 1 - الحلقات</h1>
+    
+    <div id="episode-list" class="film-container"></div>
+    
+    <script>
+        const episodes = [
+            { title: "رمضان", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/رمضان.jpg" },
+            { title: "الحلقة 2", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/رمضان.jpg" },
+            { title: "الحلقة 3", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode3.jpg" },
+            { title: "الحلقة 4", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode4.jpg" },
+            { title: "الحلقة 5", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode5.jpg" },
+            { title: "الحلقة 6", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode6.jpg" },
+            { title: "الحلقة 7", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode7.jpg" },
+            { title: "الحلقة 8", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode8.jpg" },
+            { title: "الحلقة 9", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode9.jpg" },
+            { title: "الحلقة 10", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode10.jpg" },
+            { title: "الحلقة 11", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode11.jpg" },
+            { title: "الحلقة 12", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode12.jpg" },
+            { title: "الحلقة 13", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode13.jpg" },
+            { title: "الحلقة 14", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode14.jpg" },
+            { title: "الحلقة 15", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197", imageUrl: "images/episode15.jpg" }
+        ];
+
+        function loadEpisodes() {
+            const container = document.getElementById("episode-list");
+            episodes.forEach(episode => {
+                const episodeButton = document.createElement("button");
+                const image = document.createElement("img");
+                image.src = episode.imageUrl;
+                image.alt = episode.title;
+                image.classList.add("episode-image");
+                episodeButton.classList.add("category-btn");
+                episodeButton.onclick = () => openVideoPage(episode.url);
+                episodeButton.appendChild(image);
+                container.appendChild(episodeButton);
+            });
+        }
+
+        function openVideoPage(videoUrl) {
+            if (videoUrl) {
+                window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+            } else {
+                alert("لا يوجد رابط لهذه الحلقة!");
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadEpisodes);
+    </script>
+</body>
+</html>
