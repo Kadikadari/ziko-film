@@ -3,20 +3,18 @@ const seriesFilms: [
         { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عودة غوار.html" } 
     ],
 
-// دالة عرض الأفلام الأجنبية
-function showForeignFilms() {
+function showSeriesFilms() {
     const container = document.getElementById("film-container");
-    container.innerHTML = "";  // مسح المحتوى السابق
-    
-    foreignFilms.forEach(film => {
-        // إنشاء العنصر الخاص بالفيلم
+    container.innerHTML = "";
+    arabicFilms.forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
         filmElement.classList.add("film-image");
-        
-        // إضافة الحدث عند النقر على الفيلم
         filmElement.onclick = () => openVideoPage(film.url);
+        container.appendChild(filmElement);
+    });
+}
         
         // إضافة الفيلم إلى الحاوية
         container.appendChild(filmElement);
