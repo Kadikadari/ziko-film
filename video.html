@@ -85,15 +85,26 @@
                     document.getElementById('video-frame').style.display = 'none'; // إخفاء iframe
                     document.getElementById('video-container').innerHTML = ''; // إزالة الـ iframe
                     document.getElementById('video-container').appendChild(video);
-                    
+
                     const hls = new Hls();
                     hls.loadSource(videoUrl);
                     hls.attachMedia(video);
                     hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                        video.play();
+                        video.play().catch(error => {
+                            console.error("فشل في تشغيل الفيديو:", error);
+                            alert("فشل في تشغيل الفيديو عبر HLS.js.");
+                            document.getElementById('video-container').innerHTML = `<iframe id="video-frame" src="${videoUrl}" allowfullscreen></iframe>`;
+                        });
+                    });
+
+                    hls.on(Hls.Events.ERROR, function (event, data) {
+                        console.error("خطأ في HLS.js:", data);
+                        alert("حدث خطأ أثناء تحميل الفيديو.");
+                        document.getElementById('video-container').innerHTML = `<iframe id="video-frame" src="${videoUrl}" allowfullscreen></iframe>`;
                     });
                 } else {
                     alert("متصفحك لا يدعم تشغيل HLS!");
+                    document.getElementById('video-container').innerHTML = `<iframe id="video-frame" src="${videoUrl}" allowfullscreen></iframe>`;
                 }
             } else {
                 // إذا كان الرابط ليس من نوع M3U8، نستخدم الـ iframe
