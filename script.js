@@ -28,12 +28,6 @@ const films = {
     ] 
 }; 
 
-// أفلام مميزة في الصفحة الرئيسية 
-const featuredFilms = [ 
-    { title: "فيلم مميز 1", image: "images/xut.jpg", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197" }, 
-    { title: "فيلم مميز 2", image: "images/xut.jpg", url: "https://ok.ru/videoembed/1264989833844" } 
-]; 
-
 // عرض الأفلام حسب التصنيف
 function showCategory(category) {
     const container = document.getElementById("film-container");
@@ -54,19 +48,39 @@ function showCategory(category) {
     });
 }
 
-// عرض الأفلام المميزة في الصفحة الرئيسية
+// عرض الأفلام حسب التصنيف في الصفحة الرئيسية
 function showHomePage() {
     const container = document.getElementById("home-films");
     container.innerHTML = "";
 
-    featuredFilms.forEach(film => {
-        const filmElement = document.createElement("img");
-        filmElement.src = film.image;
-        filmElement.alt = film.title;
-        filmElement.classList.add("film-image");
-        filmElement.onclick = () => openVideoPage(film.url);
-        container.appendChild(filmElement);
+    // عرض جميع التصنيفات في الصفحة الرئيسية
+    Object.keys(films).forEach(category => {
+        const categoryTitle = document.createElement("h2");
+        categoryTitle.textContent = getCategoryTitle(category);
+        container.appendChild(categoryTitle);
+
+        films[category].forEach(film => {
+            const filmElement = document.createElement("img");
+            filmElement.src = film.image;
+            filmElement.alt = film.title;
+            filmElement.classList.add("film-image");
+            filmElement.onclick = () => openVideoPage(film.url);
+            container.appendChild(filmElement);
+        });
     });
+}
+
+// الحصول على اسم التصنيف المناسب
+function getCategoryTitle(category) {
+    switch (category) {
+        case 'arabic': return 'أفلام عربي';
+        case 'foreign': return 'أفلام أجنبي';
+        case 'turkish': return 'أفلام تركي';
+        case 'indian': return 'أفلام هندي';
+        case 'asian': return 'أفلام أسيوي';
+        case 'series': return 'مسلسلات';
+        default: return '';
+    }
 }
 
 // فتح صفحة تشغيل الفيديو
@@ -78,7 +92,7 @@ function openVideoPage(videoUrl) {
     }
 }
 
-// عند تحميل الصفحة، عرض الأفلام المميزة في الصفحة الرئيسية
+// عند تحميل الصفحة، عرض الرئيسية مباشرة
 document.addEventListener("DOMContentLoaded", () => {
-    showHomePage(); // عرض الأفلام المميزة عند تحميل الصفحة
+    showHomePage(); // عرض الأفلام عند تحميل الصفحة
 });
