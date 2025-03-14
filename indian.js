@@ -17,7 +17,7 @@ const  indianFilms: [
 function showIndianFilms() {
     const container = document.getElementById("film-container");
     container.innerHTML = "";
-    arabicFilms.forEach(film => {
+    indianFilms.forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
