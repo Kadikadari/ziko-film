@@ -1,3 +1,4 @@
+// مصفوفة الأفلام الهندية
 const indianFilms = [
     { title: "Pad Man", image: "images/Pad Man.jpg", url: "https://www.ok.ru/videoembed/1116129790703" },
     { title: "Anokhi", image: "images/Anokhi.jpg", url: "https://ok.ru/videoembed/9601974667883" },
@@ -15,21 +16,27 @@ const indianFilms = [
     { title: "Saindhav", image: "images/Saindhav.jpg", url: "https://ok.ru/videoembed/10245762779755" }
 ];
 
+// دالة لعرض الأفلام الهندية
 function showIndianFilms() {
     const container = document.getElementById("film-container");
-    container.innerHTML = ""; // مسح الحاوية
+    container.innerHTML = ""; // مسح الحاوية قبل إضافة الأفلام الجديدة
 
     indianFilms.forEach(film => {
         const filmElement = document.createElement("img");
-        filmElement.src = film.image;
-        filmElement.alt = film.title;
-        filmElement.classList.add("film-image");
+        filmElement.src = film.image; // تعيين مصدر الصورة
+        filmElement.alt = film.title; // تعيين النص البديل للصورة
+        filmElement.classList.add("film-image"); // إضافة صنف CSS لتنسيق الصورة
+
+        // عند النقر على الصورة، يتم فتح الفيديو في صفحة جديدة
         filmElement.onclick = () => openVideoPage(film.url);
+
+        // إضافة الصورة إلى الحاوية
         container.appendChild(filmElement);
     });
 }
 
 // دالة لفتح صفحة الفيديو
 function openVideoPage(url) {
-    window.location.href = `player.html?url=${encodeURIComponent(url)}`;
-}
+    if (url) {
+        // الانتقال إلى صفحة الفيديو
+        window.location.href = `player.html?url=${encodeUR
