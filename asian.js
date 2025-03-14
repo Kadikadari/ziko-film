@@ -16,7 +16,7 @@ const asianFilms = [
 function showAsianFilms() {
     const container = document.getElementById("film-container");
     container.innerHTML = "";
-    arabicFilms.forEach(film => {
+    asianFilms.forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
