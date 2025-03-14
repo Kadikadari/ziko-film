@@ -117,6 +117,14 @@ function getCategoryTitle(category) {
         default: return '';
     }
 }
+function goBack() {
+    if (window.history.length > 1) {
+        history.back(); // يعود خطوة واحدة للخلف في السجل
+    } else {
+        window.location.href = "index.html"; // إذا لم يكن هناك سجل سابق، العودة للصفحة الرئيسية
+    }
+}
+
 
 function openVideoPage(videoUrl) {
     if (videoUrl) {
