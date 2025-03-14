@@ -117,10 +117,14 @@ function getCategoryTitle(category) {
     }
 }
 
-// فتح صفحة تشغيل الفيديو
 function openVideoPage(videoUrl) {
     if (videoUrl) {
-        window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+        // تحديد ما إذا كان الرابط من نوع m3u8 أو نوع آخر
+        if (videoUrl.includes(".m3u8")) {
+            window.location.href = `player.html?url=${encodeURIComponent(videoUrl)}`;
+        } else {
+            window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+        }
     } else {
         alert("لا يوجد رابط لهذا الفيديو!");
     }
