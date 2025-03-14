@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسلسل 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"> 
+</head>
+<body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
+    <h1>مسلسل 1 - الحلقات</h1>
+    
+    <div id="episode-list" class="film-container"></div>
+    
+    <script>
+        const episodes = [
+            { title: "الحلقة 1", url: "https://ok.ru/videoembed/episode1_url" },
+            { title: "الحلقة 2", url: "https://ok.ru/videoembed/episode2_url" },
+            { title: "الحلقة 3", url: "https://ok.ru/videoembed/episode3_url" }
+        ];
 
+        function loadEpisodes() {
+            const container = document.getElementById("episode-list");
+            episodes.forEach(episode => {
+                const button = document.createElement("button");
+                button.textContent = episode.title;
+                button.classList.add("category-btn");
+                button.onclick = () => openVideoPage(episode.url);
+                container.appendChild(button);
+            });
+        }
+
+        function openVideoPage(videoUrl) {
+            if (videoUrl) {
+                window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+            } else {
+                alert("لا يوجد رابط لهذه الحلقة!");
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadEpisodes);
+    </script>
+</body>
+</html>
