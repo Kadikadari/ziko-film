@@ -9,42 +9,30 @@
 </head>
 <body>
     <button id="back-btn" onclick="goBack()">رجوع</button>
-    <h1>مسلسل عودة غوار   - </h1>
+    <h1>مسلسل نور خالد وولده - </h1>
     
     <div id="episode-list" class="film-container"></div>
     
     <script>
         const episodes = [
-            { title: "الحلقه1", url: " https://ok.ru/videoembed/1566062545609 " },
-            { title: "الحلقة 2", url: " https://ok.ru/videoembed/1566061562569 " },
-            { title: "الحلقة 3", url: " https://ok.ru/videoembed/1566062480073 " },
-            { title: "الحلقة 4", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep4/720p/index.m3u8 " },
-            { title: "الحلقة 5", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep5/720p/index.m3u8 " },
-            { title: "الحلقة 6", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep6/720p/index.m3u8 " },
-            { title: "الحلقة 7", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep7/720p/index.m3u8 " },
-            { title: "الحلقة 8", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep8/720p/index.m3u8 " },
-            { title: "الحلقة 9", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep9/720p/index.m3u8 " },
-            { title: "الحلقة 10", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep10/720p/index.m3u8 " },
-            { title: "الحلقة 11", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep11/720p/index.m3u8 " },
-            { title: "الحلقة 12", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep12/720p/index.m3u8 "},
-            { title: "الحلقة 13", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep13/720p/index.m3u8 " },
-            { title: "الحلقة 14", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep14/720p/index.m3u8 " },
-            { title: "الحلقة 15", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep15/720p/index.m3u8 " },
-            { title: "الحلقة 16", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep16/720p/index.m3u8 " },
-            { title: "الحلقة 17", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep17/720p/index.m3u8 "},
-            { title: "الحلقة 18", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep18/720p/index.m3u8 " },
-            { title: "الحلقة 19", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep19/720p/index.m3u87 " },
-            { title: "الحلقة 20", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep20/720p/index.m3u8 " },
-            { title: "الحلقة 21", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep21/720p/index.m3u8 " },
-            { title: "الحلقة 22", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep22/720p/index.m3u8 "},
-            { title: "الحلقة 23", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep23/720p/index.m3u8 " },
-            { title: "الحلقة 24", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep24/720p/index.m3u8 "},
-            { title: "الحلقة 25", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep25/720p/index.m3u8 " },
-            { title: "الحلقة 26", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep26/720p/index.m3u8 " },
-            { title: "الحلقة 27الاخيرة", url: " https://shoofmax.b-cdn.net/awdet-ghawwar/ep27/720p/index.m3u8 " }
+            { title: "الحلقة 1", url: "https://shoofmax.b-cdn.net/awdet-ghawwar/ep4/720p/index.m3u8" },
+            { title: "الحلقة 2", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244372&hash=dc6125473a187c59" },
+            { title: "الحلقة 3", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456240817&hash=189dd27ea0d4e2f2" },
+            { title: "الحلقة 4", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456240897&hash=6fa55b6872e49c58" },
+            { title: "الحلقة 5", url: "https://vkvideo.ru/video_ext.php?oid=830703861&id=456241215&hash=5c713b91f9d28f12" },
+            { title: "الحلقة 6", url: "https://vkvideo.ru/video_ext.php?oid=830703861&id=456241585&hash=fce692d74afa9617" },
+            { title: "الحلقة 7", url: "https://vkvideo.ru/video_ext.php?oid=830703861&id=456241970&hash=452b8d6beb7767cc" },
+            { title: "الحلقة 8", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456241219&hash=89c373e4b26fd141" },
+            { title: "الحلقة 9", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456241289&hash=d8ea8ac55e99fe90" },
+            { title: "الحلقة 10", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456241362&hash=b6cf0c12920cf4de" },
+            { title: "الحلقة 11", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456241441&hash=d44b2215913659bc" },
+            { title: "الحلقة 12", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456241520&hash=99f94ad8a84a7bba" },
+            { title: "الحلقة 13", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456241591&hash=1c87653b85d1a7c0" },
+            { title: "الحلقة 14", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456241668&hash=a714b8f40fb0b221" },
+            { title: "الحلقة 15الاخيرة", url: "https://vkvideo.ru/video_ext.php?oid=825381160&id=456241738&hash=0a85b5557609acc6" }
         ];
 
-          function loadEpisodes() {
+        function loadEpisodes() {
             const container = document.getElementById("episode-list");
             episodes.forEach(episode => {
                 const button = document.createElement("button");
