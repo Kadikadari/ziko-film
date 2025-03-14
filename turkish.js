@@ -3,20 +3,18 @@ turkishFilms: [
         { title: "فيلم تركي 2", image: "images/xut.jpg", url: "https://ok.ru/video/12349" } 
     ], 
 
-// دالة عرض الأفلام الأجنبية
-function showForeignFilms() {
+function showTurkishFilms() {
     const container = document.getElementById("film-container");
-    container.innerHTML = "";  // مسح المحتوى السابق
-    
-    foreignFilms.forEach(film => {
-        // إنشاء العنصر الخاص بالفيلم
+    container.innerHTML = "";
+   turkishFilms.forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
         filmElement.classList.add("film-image");
-        
-        // إضافة الحدث عند النقر على الفيلم
         filmElement.onclick = () => openVideoPage(film.url);
+        container.appendChild(filmElement);
+    });
+}
         
         // إضافة الفيلم إلى الحاوية
         container.appendChild(filmElement);
@@ -24,6 +22,9 @@ function showForeignFilms() {
 }
 
 // دالة لفتح صفحة الفيديو
+function openVideoPage(url) {
+    window.location.href = `player.html?url=${encodeURIComponent(url)}`;
+}
 function openVideoPage(url) {
     window.location.href = `player.html?url=${encodeURIComponent(url)}`;
 }
