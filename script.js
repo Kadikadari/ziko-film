@@ -25,7 +25,12 @@ const films = {
     series: [ 
         { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "series1.html" }, 
         { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عودة غوار.html" } 
-    ] 
+    ],
+    home: [ // أفلام خاصة بالصفحة الرئيسية
+        { title: "فيلم مميز 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+        { title: "فيلم مميز 2", image: "images/xut.jpg", url: "https://ok.ru/videoembed/1264989833844" },
+        { title: "فيلم مميز 3", image: "images/xut.jpg", url: "https://ok.ru/videoembed/973282806388" }
+    ]
 }; 
 
 // عرض الأفلام حسب التصنيف
@@ -38,6 +43,10 @@ function showCategory(category) {
         return;
     }
 
+    const categoryTitle = document.createElement("h2");
+    categoryTitle.textContent = getCategoryTitle(category);
+    container.appendChild(categoryTitle);
+
     films[category].forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
@@ -45,28 +54,6 @@ function showCategory(category) {
         filmElement.classList.add("film-image");
         filmElement.onclick = () => openVideoPage(film.url);
         container.appendChild(filmElement);
-    });
-}
-
-// عرض الأفلام حسب التصنيف في الصفحة الرئيسية
-function showHomePage() {
-    const container = document.getElementById("home-films");
-    container.innerHTML = "";
-
-    // عرض جميع التصنيفات في الصفحة الرئيسية
-    Object.keys(films).forEach(category => {
-        const categoryTitle = document.createElement("h2");
-        categoryTitle.textContent = getCategoryTitle(category);
-        container.appendChild(categoryTitle);
-
-        films[category].forEach(film => {
-            const filmElement = document.createElement("img");
-            filmElement.src = film.image;
-            filmElement.alt = film.title;
-            filmElement.classList.add("film-image");
-            filmElement.onclick = () => openVideoPage(film.url);
-            container.appendChild(filmElement);
-        });
     });
 }
 
@@ -79,6 +66,7 @@ function getCategoryTitle(category) {
         case 'indian': return 'أفلام هندي';
         case 'asian': return 'أفلام أسيوي';
         case 'series': return 'مسلسلات';
+        case 'home': return 'الرئيسية';
         default: return '';
     }
 }
@@ -92,7 +80,7 @@ function openVideoPage(videoUrl) {
     }
 }
 
-// عند تحميل الصفحة، عرض الرئيسية مباشرة
+// عند تحميل الصفحة، عرض الأفلام الخاصة بـ "الرئيسية"
 document.addEventListener("DOMContentLoaded", () => {
-    showHomePage(); // عرض الأفلام عند تحميل الصفحة
+    showCategory('home'); // عرض الأفلام الخاصة بالرئيسية عند تحميل الصفحة
 });
