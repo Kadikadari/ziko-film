@@ -1,10 +1,10 @@
 // بيانات الأفلام 
 const films = { 
     arabic: [ 
-        { title: "فيلم عربي 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/973282806388" }, 
-        { title: "فيلم عربي 2", image: "images/xut.jpg", url: "https://ok.ru/videoembed/977388243572" }, 
-        { title: "فيلم عربي 3", image: "images/xut.jpg", url: "https://ok.ru/videoembed/979790137972" }, 
-        { title: "فيلم عربي 4", image: "images/xut.jpg", url: "https://ok.ru/videoembed/980295092852" } 
+        { title: "فيلم الخط ", image: "images/xut.jpg", url: "https://ok.ru/videoembed/973282806388" }, 
+        { title: "فيلم عربي ", image: "images/xut.jpg", url: "https://ok.ru/videoembed/977388243572" }, 
+        { title: "فيلم كركون الشارع ", image: "images/كركون.jpg", url: "https://ok.ru/videoembed/979790137972" }, 
+        { title: "فيلم مرجان ", image: "images/مرجان.jpg", url: "https://ok.ru/videoembed/980295092852" } 
     ], 
     foreign: [ 
         { title: "فيلم أجنبي 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/2950580537963" }, 
