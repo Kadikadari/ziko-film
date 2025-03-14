@@ -1,4 +1,4 @@
-import films from './films.js'; // استيراد الأفلام من films.js
+import { films } from './films.js';  // استيراد بيانات الأفلام
 
 // عرض الأفلام حسب التصنيف
 function showCategory(category) {
@@ -45,6 +45,11 @@ function openVideoPage(videoUrl) {
     } else {
         alert("لا يوجد رابط لهذا الفيديو!");
     }
+}
+
+// العودة إلى الصفحة السابقة
+function goBack() {
+    window.history.back();
 }
 
 // عند تحميل الصفحة، عرض الأفلام الخاصة بـ "الرئيسية"
