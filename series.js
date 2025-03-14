@@ -1,27 +1,17 @@
-const seriesFilms: [ 
-        { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "نور خالد.html" }, 
-        { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عودة غوار.html" } 
-    ],
+const series = [
+    { title: "مسلسل 1", image: "images/series1.jpg", url: "https://ok.ru/video/112233" },
+    { title: "مسلسل 2", image: "images/series2.jpg", url: "https://ok.ru/video/112234" }
+];
 
-function showSeriesFilms() {
+function showSeries() {
     const container = document.getElementById("film-container");
-    container.innerHTML = "";
-    seriesFilms.forEach(film => {
-        const filmElement = document.createElement("img");
-        filmElement.src = film.image;
-        filmElement.alt = film.title;
-        filmElement.classList.add("film-image");
-        filmElement.onclick = () => openVideoPage(film.url);
-        container.appendChild(filmElement);
+    container.innerHTML = ""; // مسح الحاوية
+    series.forEach(serie => {
+        const serieElement = document.createElement("img");
+        serieElement.src = serie.image;
+        serieElement.alt = serie.title;
+        serieElement.classList.add("film-image");
+        serieElement.onclick = () => openVideoPage(serie.url);
+        container.appendChild(serieElement);
     });
-}
-        
-        // إضافة الفيلم إلى الحاوية
-        container.appendChild(filmElement);
-    });
-}
-
-// دالة لفتح صفحة الفيديو
-function openVideoPage(url) {
-    window.location.href = `player.html?url=${encodeURIComponent(url)}`;
 }
