@@ -18,7 +18,7 @@ const indianFilms = [
 function showIndianFilms() {
     const container = document.getElementById("film-container");
     container.innerHTML = ""; // مسح الحاوية
-    indianFilms.forEach(film => {
+   indianFilms.forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
@@ -30,7 +30,8 @@ function showIndianFilms() {
 
  // عند النقر على الصورة، يتم فتح الفيديو في صفحة جديدة
         filmElement.onclick = () => openVideoPage(film.url);
-}
 
-// استدعاء الدالة لعرض الأفلام عند تحميل الصفحة
+
+// استدعاء الدالة لعرض الأفلام
+showAsianFilms();
 showIndianFilms();
