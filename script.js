@@ -1,4 +1,15 @@
-import { films } from './films.js';  // استيراد بيانات الأفلام
+// بيانات الأفلام 
+const films = { 
+    arabic: [ 
+        { title: "فيلم الخط", image: "images/xut.jpg", url: "https://ok.ru/videoembed/973282806388" },
+        { title: "فيلم شماريخ", image: "images/شماريخ.jpg", url: "https://vkvideo.ru/video_ext.php?oid=760447746&id=456239383&hash=10d0ecac9fdc52b1" }
+    ], 
+    foreign: [ 
+        { title: "blu", image: "images/blu.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+        { title: "pure lucke", image: "images/pure.jpg", url: "https://ok.ru/videoembed/6106193922801" }
+    ], 
+    // بقية التصنيفات هنا...
+}; 
 
 // عرض الأفلام حسب التصنيف
 function showCategory(category) {
@@ -29,11 +40,7 @@ function getCategoryTitle(category) {
     switch (category) {
         case 'arabic': return 'أفلام عربي';
         case 'foreign': return 'أفلام أجنبي';
-        case 'turkish': return 'أفلام تركي';
-        case 'indian': return 'أفلام هندي';
-        case 'asian': return 'أفلام أسيوي';
-        case 'series': return 'مسلسلات';
-        case 'home': return 'الرئيسية';
+        // بقية التصنيفات هنا...
         default: return '';
     }
 }
@@ -47,12 +54,7 @@ function openVideoPage(videoUrl) {
     }
 }
 
-// العودة إلى الصفحة السابقة
-function goBack() {
-    window.history.back();
-}
-
 // عند تحميل الصفحة، عرض الأفلام الخاصة بـ "الرئيسية"
 document.addEventListener("DOMContentLoaded", () => {
-    showCategory('home'); // عرض الأفلام الخاصة بالرئيسية عند تحميل الصفحة
+    showCategory('home'); // عرض الأفلام الخاصة بـ "الرئيسية" عند تحميل الصفحة
 });
