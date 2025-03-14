@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشغل فيديو ذكي</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+
+    <h2>قائمة الفيديوهات</h2>
+    <ul>
+        <li><a href="#" onclick="playVideo('https://example.com/video.mp4', 'iframe')">فيديو عادي</a></li>
+        <li><a href="#" onclick="playVideo('https://example.com/video2.m3u8', 'm3u8')">فيديو M3U8</a></li>
+    </ul>
+
+    <!-- مشغل iframe -->
+    <iframe id="iframePlayer" width="640" height="360" style="display: none;"></iframe>
+
+    <!-- مشغل M3U8 -->
+    <video id="hlsPlayer" controls width="640" height="360" style="display: none;"></video>
+
+    <script>
+        function playVideo(url, type) {
+            var iframe = document.getElementById("iframePlayer");
+            var video = document.getElementById("hlsPlayer");
+
+            if (type === "iframe") {
+                // تشغيل الفيديو في iframe
+                iframe.src = url;
+                iframe.style.display = "block";
+                video.style.display = "none";
+            } else if (type === "m3u8") {
+                // تشغيل الفيديو في مشغل M3U8
+                iframe.style.display = "none";
+                video.style.display = "block";
+
+                if (Hls.isSupported()) {
+                    var hls = new Hls();
+                    hls.loadSource(url);
+                    hls.attachMedia(video);
+                    hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                        video.play();
+                    });
+                } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+                    video.src = url;
+                    video.play();
+                } else {
+                    alert("المتصفح لا يدعم تشغيل M3U8!");
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
+
