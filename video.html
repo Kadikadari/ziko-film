@@ -70,15 +70,7 @@
             }
 
             // تعيين الرابط في الـ iframe
-            const videoFrame = document.getElementById("video-frame");
-            videoFrame.src = videoUrl;
-
-            // إخفاء زر الرجوع عند بدء تشغيل الفيديو
-            videoFrame.onload = function() {
-                videoFrame.contentWindow.document.addEventListener('play', function() {
-                    document.getElementById('back-btn').style.display = 'none'; // إخفاء الزر عند التشغيل
-                });
-            };
+            document.getElementById("video-frame").src = videoUrl;
         } else {
             alert("لم يتم العثور على رابط الفيديو!");
             window.location.href = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية في حال عدم وجود رابط
