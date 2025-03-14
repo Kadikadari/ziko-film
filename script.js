@@ -1,22 +1,36 @@
-// script.js
-import films from './films.js';
+import { arabicFilms } from './arabicFilms.js';
+import { foreignFilms } from './foreignFilms.js';
+import { turkishFilms } from './turkishFilms.js';
+import { indianFilms } from './indianFilms.js';
+import { asianFilms } from './asianFilms.js';
+import { seriesFilms } from './seriesFilms.js';
+import { homeFilms } from './homeFilms.js';
+
+// بيانات الأفلام
+const films = { 
+    arabic: arabicFilms,
+    foreign: foreignFilms,
+    turkish: turkishFilms,
+    indian: indianFilms,
+    asian: asianFilms,
+    series: seriesFilms,
+    home: homeFilms
+};
 
 // عرض الأفلام حسب التصنيف
 function showCategory(category) {
     const container = document.getElementById("film-container");
-    container.innerHTML = ""; // تفريغ الحاوية قبل عرض الأفلام الجديدة
+    container.innerHTML = "";
 
     if (!films[category]) {
         console.error("التصنيف غير موجود:", category);
         return;
     }
 
-    // عنوان التصنيف
     const categoryTitle = document.createElement("h2");
     categoryTitle.textContent = getCategoryTitle(category);
     container.appendChild(categoryTitle);
 
-    // عرض كل فيلم في التصنيف
     films[category].forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
