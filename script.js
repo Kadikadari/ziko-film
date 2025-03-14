@@ -1,4 +1,5 @@
 // script.js
+
 function showCategory(category) {
     const container = document.getElementById("film-container");
     container.innerHTML = "";
@@ -11,18 +12,23 @@ function showCategory(category) {
             showForeignFilms();
             break;
         case 'turkish':
-            showTurkishFilms(); // يمكنك إنشاء ملف مماثل لفئة الأفلام التركية
+            showTurkishFilms();
             break;
         case 'indian':
-            showIndianFilms(); // نفس الشيء للفئة الهندية
+            showIndianFilms();
             break;
-        // إضافة المزيد من الفئات حسب الحاجة
+        case 'asian':
+            showAsianFilms();
+            break;
+        case 'series':
+            showSeries();
+            break;
         default:
             console.error('فئة غير معروفة');
     }
 }
 
-// الدالة التي تفتح صفحة الفيديو
+// دالة فتح صفحة الفيديو
 function openVideoPage(videoUrl) {
     if (videoUrl) {
         window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
@@ -40,6 +46,7 @@ function goBack() {
     }
 }
 
+// تحميل الصفحة الرئيسية عند تشغيل الموقع
 document.addEventListener("DOMContentLoaded", () => {
-    showCategory('home'); // عرض الأفلام الخاصة بالرئيسية عند تحميل الصفحة
+    showCategory('home');
 });
