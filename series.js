@@ -3,22 +3,22 @@ const series = [
     { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عودة غوار.html" }
 ];
 
-function showSeries() {
+function showSeriesFilms() {
     const container = document.getElementById("film-container");
     container.innerHTML = ""; // مسح الحاوية
-    series.forEach(serie => {
-        const serieElement = document.createElement("img");
-        serieElement.src = serie.image;
-        serieElement.alt = serie.title;
-        serieElement.classList.add("film-image");
-        serieElement.onclick = () => openVideoPage(serie.url);
-        container.appendChild(serieElement);
+    seriesFilms.forEach(film => {
+        const filmElement = document.createElement("img");
+        filmElement.src = film.image;
+        filmElement.alt = film.title;
+        filmElement.classList.add("film-image");
+        filmElement.onclick = () => openVideoPage(film.url);
+        container.appendChild(filmElement);
     });
 }
 
  // عند النقر على الصورة، يتم فتح الفيديو في صفحة جديدة
         filmElement.onclick = () => openVideoPage(film.url);
 
-// استدعاء الدالة لعرض المسلسلات عند تحميل الصفحة
-showSeries();
 
+// استدعاء الدالة لعرض الأفلام
+showAsianFilms();
