@@ -6,7 +6,6 @@ import { asianFilms } from './asianFilms.js';
 import { seriesFilms } from './seriesFilms.js';
 import { homeFilms } from './homeFilms.js';
 
-// بيانات الأفلام
 const films = { 
     arabic: arabicFilms,
     foreign: foreignFilms,
@@ -66,5 +65,5 @@ function openVideoPage(videoUrl) {
 
 // عند تحميل الصفحة، عرض الأفلام الخاصة بـ "الرئيسية"
 document.addEventListener("DOMContentLoaded", () => {
-    showCategory('home'); // عرض الأفلام الخاصة بالرئيسية عند تحميل الصفحة
+    showCategory('home');
 });
