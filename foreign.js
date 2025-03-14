@@ -1,3 +1,4 @@
+// foreign.js
 const foreignFilms = [
     { title: "blu", image: "images/blu.jpg", url: "https://ok.ru/videoembed/2950580537963" },
     { title: "pure lucke", image: "images/pure.jpg", url: "https://ok.ru/videoembed/6106193922801" },
@@ -17,4 +18,3 @@ function showForeignFilms() {
         container.appendChild(filmElement);
     });
 }
-
