@@ -1,20 +1,5 @@
-import { arabicFilms } from './arabicFilms.js';
-import { foreignFilms } from './foreignFilms.js';
-import { turkishFilms } from './turkishFilms.js';
-import { indianFilms } from './indianFilms.js';
-import { asianFilms } from './asianFilms.js';
-import { seriesFilms } from './seriesFilms.js';
-import { homeFilms } from './homeFilms.js';
-
-const films = { 
-    arabic: arabicFilms,
-    foreign: foreignFilms,
-    turkish: turkishFilms,
-    indian: indianFilms,
-    asian: asianFilms,
-    series: seriesFilms,
-    home: homeFilms
-};
+// استيراد الأفلام من ملف films.js
+import films from './films.js';
 
 // عرض الأفلام حسب التصنيف
 function showCategory(category) {
@@ -49,7 +34,6 @@ function getCategoryTitle(category) {
         case 'indian': return 'أفلام هندي';
         case 'asian': return 'أفلام أسيوي';
         case 'series': return 'مسلسلات';
-        case 'home': return 'الرئيسية';
         default: return '';
     }
 }
@@ -65,5 +49,5 @@ function openVideoPage(videoUrl) {
 
 // عند تحميل الصفحة، عرض الأفلام الخاصة بـ "الرئيسية"
 document.addEventListener("DOMContentLoaded", () => {
-    showCategory('home');
+    showCategory('home'); // عرض الأفلام الخاصة بالرئيسية عند تحميل الصفحة
 });
