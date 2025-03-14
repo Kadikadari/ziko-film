@@ -49,7 +49,10 @@ function showForeignFilms() {
     });
 }
 
-// دالة لفتح صفحة الفيديو
-function openVideoPage(url) {
-    window.location.href = `player.html?url=${encodeURIComponent(url)}`;
+function openVideoPage(videoUrl) {
+    if (videoUrl) {
+        window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`; // الانتقال إلى صفحة الفيديو
+    } else {
+        alert("لا يوجد رابط لهذا الفيديو!"); // إذا لم يكن الرابط موجودًا
+    }
 }
