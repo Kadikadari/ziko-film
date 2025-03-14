@@ -13,7 +13,7 @@ const asianFilms = [
 ];
 
 
-function showArabicFilms() {
+function showAsianFilms() {
     const container = document.getElementById("film-container");
     container.innerHTML = "";
     arabicFilms.forEach(film => {
