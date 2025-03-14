@@ -14,20 +14,18 @@ const  indianFilms: [
          { title: "Meiyazhagan   ", image: "images/Meiyazhagan.jpg", url: "https://ok.ru/videoembed/8441740921470" }, 
         { title: "Saindhav  ", image: "images/Saindhav.jpg", url: "https://ok.ru/videoembed/10245762779755" } 
     ], 
-// دالة عرض الأفلام الأجنبية
-function showForeignFilms() {
+function showIndianFilms() {
     const container = document.getElementById("film-container");
-    container.innerHTML = "";  // مسح المحتوى السابق
-    
-    foreignFilms.forEach(film => {
-        // إنشاء العنصر الخاص بالفيلم
+    container.innerHTML = "";
+    arabicFilms.forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
         filmElement.classList.add("film-image");
-        
-        // إضافة الحدث عند النقر على الفيلم
         filmElement.onclick = () => openVideoPage(film.url);
+        container.appendChild(filmElement);
+    });
+}
         
         // إضافة الفيلم إلى الحاوية
         container.appendChild(filmElement);
