@@ -17,15 +17,7 @@
             height: 100vh;
         }
 
-        #video-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #video-frame, video {
+        iframe {
             width: 100%;
             height: 100%;
             border: none;
@@ -59,14 +51,10 @@
             }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
     <button id="back-btn" onclick="goBack()">رجوع</button>
-    <div id="video-container">
-        <!-- سيتم استبدال هذا العنصر بين iframe أو video -->
-        <iframe id="video-frame" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups" referrerpolicy="no-referrer"></iframe>
-    </div>
+    <iframe id="video-frame" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups" referrerpolicy="no-referrer"></iframe>
 
     <script>
         // استخراج رابط الفيديو من عنوان URL
@@ -74,50 +62,23 @@
         let videoUrl = urlParams.get('url');
 
         if (videoUrl) {
-            // التأكد من أن الرابط هو رابط M3U8 أو رابط فيديو عادي
-            if (videoUrl.endsWith(".m3u8")) {
-                // إذا كان الرابط من نوع M3U8، نستخدم HLS.js لتشغيله
-                if (Hls.isSupported()) {
-                    const video = document.createElement('video');
-                    video.setAttribute('controls', 'true');
-                    video.style.width = '100%';
-                    video.style.height = '100%';
-                    document.getElementById('video-frame').style.display = 'none'; // إخفاء iframe
-                    document.getElementById('video-container').innerHTML = ''; // إزالة الـ iframe
-                    document.getElementById('video-container').appendChild(video);
-
-                    const hls = new Hls();
-                    hls.loadSource(videoUrl);
-                    hls.attachMedia(video);
-                    hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                        video.play().catch(error => {
-                            console.error("فشل في تشغيل الفيديو:", error);
-                            alert("فشل في تشغيل الفيديو عبر HLS.js.");
-                            document.getElementById('video-container').innerHTML = `<iframe id="video-frame" src="${videoUrl}" allowfullscreen></iframe>`;
-                        });
-                    });
-
-                    hls.on(Hls.Events.ERROR, function (event, data) {
-                        console.error("خطأ في HLS.js:", data);
-                        alert("حدث خطأ أثناء تحميل الفيديو.");
-                        document.getElementById('video-container').innerHTML = `<iframe id="video-frame" src="${videoUrl}" allowfullscreen></iframe>`;
-                    });
-                } else {
-                    alert("متصفحك لا يدعم تشغيل HLS!");
-                    document.getElementById('video-container').innerHTML = `<iframe id="video-frame" src="${videoUrl}" allowfullscreen></iframe>`;
-                }
+            // التأكد من دعم التشغيل التلقائي
+            if (videoUrl.includes("?")) {
+                videoUrl += "&autoplay=1&muted=1"; 
             } else {
-                // إذا كان الرابط ليس من نوع M3U8، نستخدم الـ iframe
-                if (videoUrl.includes("?")) {
-                    videoUrl += "&autoplay=1&muted=1"; 
-                } else {
-                    videoUrl += "?autoplay=1&muted=1";
-                }
-
-                // نعرض الفيديو العادي باستخدام iframe
-                document.getElementById("video-frame").style.display = 'block'; // إظهار الـ iframe
-                document.getElementById("video-frame").src = videoUrl;
+                videoUrl += "?autoplay=1&muted=1";
             }
+
+            // تعيين الرابط في الـ iframe
+            const videoFrame = document.getElementById("video-frame");
+            videoFrame.src = videoUrl;
+
+            // إخفاء زر الرجوع عند بدء تشغيل الفيديو
+            videoFrame.onload = function() {
+                videoFrame.contentWindow.document.addEventListener('play', function() {
+                    document.getElementById('back-btn').style.display = 'none'; // إخفاء الزر عند التشغيل
+                });
+            };
         } else {
             alert("لم يتم العثور على رابط الفيديو!");
             window.location.href = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية في حال عدم وجود رابط
