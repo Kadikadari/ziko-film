@@ -40,6 +40,7 @@ function openVideoPage(videoUrl) {
     }
 }
 
+
 // دالة للرجوع إلى الصفحة السابقة أو الرئيسية
 function goBack() {
     if (window.history.length > 1) {
