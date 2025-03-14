@@ -6,7 +6,7 @@ const seriesFilms: [
 function showSeriesFilms() {
     const container = document.getElementById("film-container");
     container.innerHTML = "";
-    arabicFilms.forEach(film => {
+    seriesFilms.forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
