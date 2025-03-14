@@ -25,9 +25,9 @@ function showAsianFilms() {
     });
 }
 
-function openVideoPage(url) {
-    window.open(url, "_blank"); // فتح الرابط في نافذة جديدة
-}
+ // عند النقر على الصورة، يتم فتح الفيديو في صفحة جديدة
+        filmElement.onclick = () => openVideoPage(film.url);
+
 
 // استدعاء الدالة لعرض الأفلام
 showAsianFilms();
