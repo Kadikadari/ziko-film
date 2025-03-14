@@ -13,16 +13,18 @@ const asianFilms = [
 ];
 
 
-// دالة عرض الأفلام الأجنبية
-function showForeignFilms() {
+function showArabicFilms() {
     const container = document.getElementById("film-container");
-    container.innerHTML = "";  // مسح المحتوى السابق
-    
-    foreignFilms.forEach(film => {
-        // إنشاء العنصر الخاص بالفيلم
+    container.innerHTML = "";
+    arabicFilms.forEach(film => {
         const filmElement = document.createElement("img");
         filmElement.src = film.image;
         filmElement.alt = film.title;
+        filmElement.classList.add("film-image");
+        filmElement.onclick = () => openVideoPage(film.url);
+        container.appendChild(filmElement);
+    });
+}
         filmElement.classList.add("film-image");
         
         // إضافة الحدث عند النقر على الفيلم
