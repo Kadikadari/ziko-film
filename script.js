@@ -24,7 +24,7 @@ const films = {
     ], 
     series: [ 
         { title: "مسلسل 1", image: "images/o3407508_16666602.jpg", url: "series1.html" }, 
-        { title: "مسلسل 2", image: "images/xut.jpg", url: "https://ok.ru/video/42349" } 
+        { title: "مسلسل 2", image: "images/xut.jpg", url: "عودة غوار.html" } 
     ] 
 }; 
 
