@@ -26,6 +26,13 @@ const films = {
         { title: " so much love to give ", image: "images/so much love to give.jpg", url: "https://ok.ru/videoembed/1840947464773" },
         { title: " spanglish ", image: "images/spanglish.jpg", url: "https://games.ok.ru/videoembed/1964927355518" },
         { title: " the brother ", image: "images/the brother.jpg", url: "https://mega.nz/embed/0M52yTra#9oaURsSXiZtVgLw_sZw5BndW3YVsRcqQ8wZVTBD-bgE" },
+         { title: "The Martian   ", image: "images/The Martian.jpg", url: "https://ok.ru/videoembed/8050242095857" }, 
+        { title: " Nothing   ", image: "images/Nothing.jpg", url: "https://ok.ru/videoembed/1555294456322" },
+        { title: " gulivver ", image: "images/gulivver.jpg", url: "https://ok.ru/videoembed/1935460797148" },
+        { title: " life  ", image: "images/life.jpg", url: "https://ok.ru/videoembed/1259723229860" },
+         { title: " dora   ", image: "images/dora.jpg", url: "https://ok.ru/videoembed/1225607023140" },
+        { title: " Rebound ", image: "images/Rebound.jpg", url: "https://ok.ru/videoembed/1555295111682" },
+        { title: " everything   ", image: "images/everything.jpg", url: "https://ok.ru/videoembed/480547965544" },
         { title: " أجنبي ", image: "images/mstrchersh.jpg", url: "https://ok.ru/videoembed/1264989833844" } 
     ], 
     turkish: [ 
