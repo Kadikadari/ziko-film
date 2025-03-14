@@ -6,7 +6,7 @@ const homeFilms = [
     { title: "فيلم مرجان", image: "images/مرجان.jpg", url: "https://ok.ru/videoembed/980295092852" }
 ];
 
-function showArabicFilms() {
+function showHomeFilms() {
     const container = document.getElementById("film-container");
     container.innerHTML = "";
     arabicFilms.forEach(film => {
