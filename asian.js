@@ -1,3 +1,4 @@
+// مصفوفة الأفلام الآسيوية
 const asianFilms = [ 
     { title: "Summer", image: "images/Summer.jpg", url: "https://ok.ru/videoembed/10339495578219" },
     { title: "Sleeping", image: "images/Sleeping.jpg", url: "https://ok.ru/videoembed/10017893583467" }, 
@@ -12,25 +13,21 @@ const asianFilms = [
     { title: "Love", image: "images/Love.jpg", url: "https://ok.ru/videoembed/10339550693995" } 
 ];
 
-
+// دالة لعرض الأفلام الآسيوية
 function showAsianFilms() {
     const container = document.getElementById("film-container");
-    container.innerHTML = "";
+    container.innerHTML = ""; // مسح الحاوية
+
     asianFilms.forEach(film => {
         const filmElement = document.createElement("img");
-        filmElement.src = film.image;
-        filmElement.alt = film.title;
-        filmElement.classList.add("film-image");
+        filmElement.src = film.image; // تعيين الصورة
+        filmElement.alt = film.title; // تعيين النص البديل
+        filmElement.classList.add("film-image"); // إضافة صنف CSS لتنسيق الصور
+
+        // عند النقر على الصورة، يتم فتح الفيديو في صفحة جديدة
         filmElement.onclick = () => openVideoPage(film.url);
-        container.appendChild(filmElement);
-    });
-}
-        filmElement.classList.add("film-image");
-        
-        // إضافة الحدث عند النقر على الفيلم
-        filmElement.onclick = () => openVideoPage(film.url);
-        
-        // إضافة الفيلم إلى الحاوية
+
+        // إضافة الصورة إلى الحاوية
         container.appendChild(filmElement);
     });
 }
