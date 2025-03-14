@@ -3,55 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشغل فيديو ذكي</title>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <title>مشاهدة الفيلم</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        iframe, video {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #000;
+        }
+
+        #back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #back-btn:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            #back-btn {
+                top: 10px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
 
-    <h2>قائمة الفيديوهات</h2>
-    <ul>
-        <li><a href="#" onclick="playVideo('https://example.com/video.mp4', 'iframe')">فيديو عادي</a></li>
-        <li><a href="#" onclick="playVideo('https://example.com/video2.m3u8', 'm3u8')">فيديو M3U8</a></li>
-    </ul>
+    <!-- عنصر الفيديو الجديد -->
+    <video id="video-player" controls style="display:none;"></video>
 
-    <!-- مشغل iframe -->
-    <iframe id="iframePlayer" width="640" height="360" style="display: none;"></iframe>
-
-    <!-- مشغل M3U8 -->
-    <video id="hlsPlayer" controls width="640" height="360" style="display: none;"></video>
+    <!-- المشغل القديم -->
+    <iframe id="video-frame" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups" referrerpolicy="no-referrer" style="display:none;"></iframe>
 
     <script>
-        function playVideo(url, type) {
-            var iframe = document.getElementById("iframePlayer");
-            var video = document.getElementById("hlsPlayer");
+        // استخراج رابط الفيديو من عنوان URL
+        const urlParams = new URLSearchParams(window.location.search);
+        let videoUrl = urlParams.get('url');
 
-            if (type === "iframe") {
-                // تشغيل الفيديو في iframe
-                iframe.src = url;
-                iframe.style.display = "block";
-                video.style.display = "none";
-            } else if (type === "m3u8") {
-                // تشغيل الفيديو في مشغل M3U8
-                iframe.style.display = "none";
-                video.style.display = "block";
+        if (videoUrl) {
+            // التحقق إذا كان الرابط m3u8
+            if (videoUrl.endsWith(".m3u8")) {
+                // إظهار مشغل الفيديو الجديد
+                document.getElementById("video-player").style.display = "block";
+                document.getElementById("video-frame").style.display = "none";
 
-                if (Hls.isSupported()) {
-                    var hls = new Hls();
-                    hls.loadSource(url);
-                    hls.attachMedia(video);
-                    hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                        video.play();
-                    });
-                } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-                    video.src = url;
-                    video.play();
-                } else {
-                    alert("المتصفح لا يدعم تشغيل M3U8!");
-                }
+                // تعيين رابط .m3u8 للمشغل
+                const videoPlayer = document.getElementById("video-player");
+                videoPlayer.src = videoUrl;
+                videoPlayer.play();
+            } else {
+                // إظهار مشغل الفيديو القديم
+                document.getElementById("video-frame").style.display = "block";
+                document.getElementById("video-player").style.display = "none";
+
+                // إضافة رابط الفيديو للمشغل القديم
+                document.getElementById("video-frame").src = videoUrl;
+            }
+        } else {
+            alert("لم يتم العثور على رابط الفيديو!");
+            window.location.href = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية في حال عدم وجود رابط
+        }
+
+        // وظيفة زر الرجوع مع التحقق من سجل التصفح
+        function goBack() {
+            if (window.history.length > 1) {
+                history.back(); 
+            } else {
+                window.location.href = "index.html"; 
             }
         }
     </script>
-
 </body>
 </html>
-
