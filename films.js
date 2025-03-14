@@ -1,22 +1,11 @@
-// استيراد بيانات الأفلام من الملفات المختلفة
-import { arabicFilms } from "./arabic.js";
-import { foreignFilms } from "./foreign.js";
-import { turkishFilms } from "./turkish.js";
-import { indianFilms } from "./indian.js";
-import { asianFilms } from "./asian.js";
-import { seriesFilms } from "./series.js";
-import { homeFilms } from "./home.js";
-
-// تجميع الأفلام تحت كائن واحد
-const films = {
-    arabic: arabicFilms,
-    foreign: foreignFilms,
-    turkish: turkishFilms,
-    indian: indianFilms,
-    asian: asianFilms,
-    series: seriesFilms,
-    home: homeFilms
+export const films = { 
+    arabic: [ 
+        { title: "فيلم الخط", image: "images/xut.jpg", url: "https://ok.ru/videoembed/973282806388" },
+        // باقي الأفلام العربية...
+    ], 
+    foreign: [ 
+        { title: "blu", image: "images/blu.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+        // باقي الأفلام الأجنبية...
+    ],
+    // باقي التصنيفات مثل التركي والهندي...
 };
-
-// تصدير الكائن لاستخدامه في script.js
-export default films;
