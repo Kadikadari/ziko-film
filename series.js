@@ -1,7 +1,7 @@
 const series = [
-    { title: "مسلسل 1", image: "images/series1.jpg", url: "https://ok.ru/video/112233" },
-    { title: "مسلسل 2", image: "images/series2.jpg", url: "https://ok.ru/video/112234" }
-];
+    { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "نور خالد.html" }, 
+        { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عودة غوار.html" } 
+    ],
 
 function showSeries() {
     const container = document.getElementById("film-container");
