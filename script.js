@@ -1,9 +1,4 @@
-// استيراد الملفات
-import { showArabicFilms } from './arabic.js';
-import { showForeignFilms } from './foreign.js';
-// استيراد الملفات الأخرى حسب الحاجة
-
-// دالة لعرض الأفلام حسب التصنيف
+// script.js
 function showCategory(category) {
     const container = document.getElementById("film-container");
     container.innerHTML = "";
