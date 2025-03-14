@@ -1,9 +1,38 @@
-// بيانات الأفلام 
-const films = { 
-    arabic: [ 
-        // يمكن إضافة أفلام هنا إذا كانت موجودة
-    ],
-    series: [ 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziko-Film</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"> 
+</head>
+<body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
+
+    <header>
+        <nav>
+            <ul>
+                <li><button class="category-btn" onclick="showCategory('arabic')">أفلام عربي</button></li>
+                <li><button class="category-btn" onclick="showCategory('foreign')">أفلام أجنبي</button></li>
+                <li><button class="category-btn" onclick="showCategory('turkish')">أفلام تركي</button></li>
+                <li><button class="category-btn" onclick="showCategory('indian')">أفلام هندي</button></li>
+                <li><button class="category-btn" onclick="showCategory('asian')">أفلام أسيوي</button></li>
+                <li><button class="category-btn" onclick="showCategory('series')">مسلسلات</button></li>
+                <li><button class="category-btn" onclick="showHomePage()">الرئيسية</button></li> <!-- زر الرئيسية -->
+            </ul>
+        </nav>
+    </header>
+
+  // فتح صفحة تشغيل الفيديو
+function openVideoPage(videoUrl) {
+    if (videoUrl) {
+        window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+    } else {
+        alert("لا يوجد رابط لهذا الفيديو!");
+    }
+}
+   series: [ 
         { title: "الحلقه 1", image: "images/o3407508_16666602.jpg", url: "https://vkvideo.ru/video_ext.php?oid=791768803&id=456244371&hash=114aa39ab436b197" }, 
         { title: "الحلقه 2", image: "images/o3407508_16666602.jpg", url: "https://ok.ru/video/42349" },
         { title: "الحلقه 3", image: "images/o3407508_16666602.jpg", url: "https://ok.ru/video/42348" }, 
@@ -37,51 +66,6 @@ const films = {
     ]
 };
 
-// عرض الأفلام حسب التصنيف
-function showCategory(category) {
-    const container = document.getElementById("film-container");
-    container.innerHTML = "";
-
-    if (!films[category]) {
-        console.error("التصنيف غير موجود:", category);
-        return;
-    }
-
-    films[category].forEach(film => {
-        const filmElement = document.createElement("img");
-        filmElement.src = film.image;
-        filmElement.alt = film.title;
-        filmElement.classList.add("film-image");
-        filmElement.onclick = () => openVideoPage(film.url);
-        container.appendChild(filmElement);
-    });
-}
-
-// عرض الأفلام المميزة في الصفحة الرئيسية
-function showHomePage() {
-    const container = document.getElementById("home-films");
-    container.innerHTML = "";
-
-    featuredFilms.forEach(film => {
-        const filmElement = document.createElement("img");
-        filmElement.src = film.image;
-        filmElement.alt = film.title;
-        filmElement.classList.add("film-image");
-        filmElement.onclick = () => openVideoPage(film.url);
-        container.appendChild(filmElement);
-    });
-}
-
-// فتح صفحة تشغيل الفيديو
-function openVideoPage(videoUrl) {
-    if (videoUrl) {
-        window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
-    } else {
-        alert("لا يوجد رابط لهذا الفيديو!");
-    }
-}
-
-// عند تحميل الصفحة، عرض الأفلام المميزة في الصفحة الرئيسية
-document.addEventListener("DOMContentLoaded", () => {
-    showHomePage(); // عرض الأفلام المميزة عند تحميل الصفحة
-});
+    <script src="script.js"></script>
+</body>
+</html>
