@@ -1,6 +1,6 @@
 // بيانات الأفلام 
 const films = { 
-    arabic: [ 
+    arabic-film.html: [ 
         { title: "فيلم عربي 1", image: "images/xut.jpg", url: "https://ok.ru/videoembed/973282806388" }, 
         { title: "فيلم عربي 2", image: "images/xut.jpg", url: "https://ok.ru/videoembed/977388243572" }, 
         { title: "فيلم عربي 3", image: "images/xut.jpg", url: "https://ok.ru/videoembed/979790137972" }, 
