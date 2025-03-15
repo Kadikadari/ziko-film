@@ -14,8 +14,8 @@ function showSeriesFilms() {
 
         // إضافة رابط للتوجيه إلى ملف HTML عند الضغط على الصورة
         const link = document.createElement("a");
-        link.href = serie.url;
-        link.target = "_blank"; // فتح الرابط في نافذة جديدة
+        link.href = serie.url;  // توجيه المستخدم إلى صفحة المسلسل
+        link.target = "_self";   // فتح الرابط في نفس النافذة
         link.appendChild(serieElement);
         
         container.appendChild(link);
