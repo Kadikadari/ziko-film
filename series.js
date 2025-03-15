@@ -12,13 +12,12 @@ function showSeriesFilms() {
         serieElement.alt = serie.title;
         serieElement.classList.add("film-image");
 
-        // إضافة رابط للتوجيه إلى ملف HTML عند الضغط على الصورة
-        const link = document.createElement("a");
-        link.href = serie.url;  // توجيه المستخدم إلى صفحة المسلسل
-        link.target = "_self";   // فتح الرابط في نفس النافذة
-        link.appendChild(serieElement);
+        // عند الضغط على الصورة يتم توجيه المستخدم إلى صفحة المسلسل
+        serieElement.onclick = function() {
+            window.location.href = serie.url; // فتح صفحة المسلسل في نفس النافذة
+        };
         
-        container.appendChild(link);
+        container.appendChild(serieElement);
     });
 }
 
