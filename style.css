@@ -100,7 +100,7 @@ nav ul li {
 /* عند تمرير المؤشر على الصورة (hover) */
 .film-image:hover {
     transform: scale(1.1);
-    border: 3px solid #FFD700; /* إضافة إطار ذهبي */
+    border: 5px solid #FFD700; /* إضافة إطار ذهبي */
 }
 
 /* الوسائط المتعددة (responsive) */
