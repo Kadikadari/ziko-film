@@ -120,7 +120,13 @@ function getCategoryTitle(category) {
 // فتح صفحة تشغيل الفيديو
 function openVideoPage(videoUrl) {
     if (videoUrl) {
-        window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+        if (videoUrl.endsWith('.html')) {
+            // إذا كان الرابط ينتهي بـ .html، افتحه كصفحة HTML
+            window.location.href = videoUrl;
+        } else {
+            // إذا كان رابط فيديو، افتحه باستخدام video.html
+            window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+        }
     } else {
         alert("لا يوجد رابط لهذا الفيديو!");
     }
