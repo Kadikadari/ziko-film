@@ -5,33 +5,16 @@ const homeFilms = [
     { title: "فيلم مرجان", image: "images/مرجان.jpg", url: "https://ok.ru/videoembed/980295092852" }
 ];
 
+const arabicFilms = [];
+const foreignFilms = [];
+const turkishFilms = [];
+const indianFilms = [];
+const asianFilms = [];
+
 const series = [
     { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "nor-xaled.html" },
     { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "ghowar.html" }
 ];
-
- break;
-        case 'arabic':
-            showArabicFilms(); // عرض الأفلام العربية
-            break;
-        case 'foreign':
-            showForeignFilms(); // عرض الأفلام الأجنبية
-            break;
-        case 'turkish':
-            showTurkishFilms(); // عرض الأفلام التركية
-            break;
-        case 'indian':
-            showIndianFilms(); // عرض الأفلام الهندية
-            break;
-        case 'asian':
-            showAsianFilms(); // عرض الأفلام الآسيوية
-
-
-
-
-
-
-
 
 // دالة عامة لإنشاء وعرض الأفلام أو المسلسلات
 function displayItems(items) {
@@ -58,6 +41,21 @@ function showCategory(category) {
     switch (category) {
         case 'home':
             displayItems(homeFilms);
+            break;
+        case 'arabic':
+            displayItems(arabicFilms);
+            break;
+        case 'foreign':
+            displayItems(foreignFilms);
+            break;
+        case 'turkish':
+            displayItems(turkishFilms);
+            break;
+        case 'indian':
+            displayItems(indianFilms);
+            break;
+        case 'asian':
+            displayItems(asianFilms);
             break;
         case 'series':
             displayItems(series);
