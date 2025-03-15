@@ -101,7 +101,7 @@ const films = {
     ],
     home: [ // أفلام خاصة بالصفحة الرئيسية
         { title: "فيلم مميز 1", image: "images/blu.jpg", url: "https://ok.ru/videoembed/2950580537963" },
-         { title: "Dunki  ", image: "images/Dunki.jpg", url: "https://uqload.to/embed-of3eu17ykljf.html?st=4N3I0e3QWPcUMUTVesVdhw&e=1740986747" }, 
+         { title: "Dunki  ", image: "images/Dunki.jpg", url: "https://vidmoly.to/embed-oqtdxzg6uu6c.html" }, 
         { title: "pawn   ", image: "images/pawn.jpg", url: "https://www.ok.ru/videoembed/8137393638069" }, 
          { title: " gran  ", image: "images/gran.jpg", url: "https://ok.ru/videoembed/7085340166806" },
          { title: " Chihiro ", image: "images/Chihiro.jpg", url: "https://ok.ru/videoembed/6382795360989" },
