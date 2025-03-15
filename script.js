@@ -2,15 +2,30 @@
 const films = { 
     arabic: [ 
         { title: " البداية ", image: "images/البداية.jpg", url: "https://ok.ru/videoembed/1718394489346" }, 
-        { title: " Jazeerat ", image: "images/Jazeerat.jpg", url: "https://ok.ru/videoembed/9381097704053" },
-         { title: " البداية ", image: "images/البداية.jpg", url: "https://ok.ru/videoembed/1718394489346" },
-         { title: " البداية ", image: "images/البداية.jpg", url: "https://ok.ru/videoembed/1718394489346" }
+        { title: " Jazeerat ", image: "images/Jazeerat.jpg", url: "https://ok.ru/videoembed/2150438079177" },
+         { title: " كفرون ", image: "images/كفرون.jpg", url: "https://ok.ru/videoembed/1718394489346" },
+        { title: " طلعت  ", image: "images/طلعت.jpg", url: "https://ok.ru/videoembed/3705485920969" },
+        { title: " نوتردام ", image: "images/نوتردام.jpg", url: "https://ok.ru/videoembed/3705057774281" },
+        { title: " ياصحبي ", image: "images/ياصحبي.jpg", url: "https://ok.ru/videoembed/2152643693257" },
+        { title: " صايع ", image: "images/صايع.jpg", url: "https://ok.ru/videoembed/2152644086473" },
+        { title: " ابوالنيل ", image: "images/ابوالنيل.jpg", url: "https://ok.ru/videoembed/2152644807369" },
+        { title: " وقفه ", image: "images/وقفه.jpg", url: "https://ok.ru/videoembed/3705485724361" },
+        { title: " السعد ", image: "images/السعد.jpg", url: "https://ok.ru/videoembed/2150439586505" },
+        { title: " للماذون ", image: "images/للماذون.jpg", url: "https://ok.ru/videoembed/3705057970889" },
+        { title: " محترم ", image: "images/محترم.jpg", url: "https://ok.ru/videoembed/2152411302601" },
+        { title: " مرجان ", image: "images/مرجان.jpg", url: "https://ok.ru/videoembed/2152411171529" },
+        { title: " حسين ", image: "images/حسين.jpg", url: "https://ok.ru/videoembed/2152411105993" },
+        { title: " كنغر ", image: "images/كنغر.jpg", url: "https://ok.ru/videoembed/2150438669001" },
+        { title: " وشهير ", image: "images/وشهير.jpg", url: "https://ok.ru/videoembed/2152643627721" },
+        { title: " صناعي ", image: "images/صناعي.jpg", url: "https://ok.ru/videoembed/2152411368137" },
+        { title: " لخمه ", image: "images/لخمه.jpg", url: "https://ok.ru/videoembed/2152410778313" },
+        { title: " كركر ", image: "images/كركر.jpg", url: "https://ok.ru/videoembed/2150439062217" },
+        { title: " معالي ", image: "images/معالي.jpg", url: "https://ok.ru/videoembed/2152410712777" },
+         { title: " كلمني ", image: "images/كلمني.jpg", url: "https://ok.ru/videoembed/2150439455433" }
        
     ], 
     foreign: [ 
         { title: "blu  ", image: "images/blu.jpg", url: "https://ok.ru/videoembed/2950580537963" }, 
-         { title: "Dunki  ", image: "images/Dunki.jpg", url: "https://uqload.to/embed-of3eu17ykljf.html?st=4N3I0e3QWPcUMUTVesVdhw&e=1740986747" }, 
-        { title: "pawn   ", image: "images/pawn.jpg", url: "https://www.ok.ru/videoembed/8137393638069" }, 
          { title: " gran  ", image: "images/gran.jpg", url: "https://ok.ru/videoembed/7085340166806" },
         { title: " pure lucke ", image: "images/pure.jpg", url: "https://ok.ru/videoembed/6106193922801" },
         { title: " shawshank ", image: "images/shawshenk.jpg", url: "https://www.ok.ru/videoembed/8281347918517" },
@@ -48,6 +63,7 @@ const films = {
     ], 
     indian: [ 
         { title: "Pad Man  ", image: "images/Pad Man.jpg", url: "https://www.ok.ru/videoembed/1116129790703" }, 
+         { title: "Dunki  ", image: "images/Dunki.jpg", url: "https://uqload.to/embed-of3eu17ykljf.html?st=4N3I0e3QWPcUMUTVesVdhw&e=1740986747" }, 
          { title: "Anokhi  ", image: "images/Anokhi.jpg", url: "https://ok.ru/videoembed/9601974667883" }, 
          { title: "Rebel  ", image: "images/Rebel.jpg", url: "https://ok.ru/videoembed/9602752514667" }, 
          { title: "Joshua  ", image: "images/Joshua.jpg", url: "https://ok.ru/videoembed/9602129726059" }, 
@@ -64,6 +80,7 @@ const films = {
     ], 
     asian: [ 
          { title: "Summer   ", image: "images/Summer.jpg", url: "https://ok.ru/videoembed/10339495578219" },
+        { title: "pawn   ", image: "images/pawn.jpg", url: "https://www.ok.ru/videoembed/8137393638069" }, 
         { title: "Sleeping ", image: "images/Sleeping.jpg", url: "https://ok.ru/videoembed/10017893583467" }, 
          { title: "pawn   ", image: "images/pawn.jpg", url: "https://www.ok.ru/videoembed/8137393638069" }, 
         { title: "Yoko ", image: "images/Yoko.jpg", url: "https://ok.ru/videoembed/10018058078827" },
