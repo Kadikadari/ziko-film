@@ -16,9 +16,6 @@ function showSeriesFilms() {
     });
 }
 
- // عند النقر على الصورة، يتم فتح الفيديو في صفحة جديدة
-        filmElement.onclick = () => openVideoPage(film.url);
-
 
 // استدعاء الدالة لعرض الأفلام
 showAsianFilms();
