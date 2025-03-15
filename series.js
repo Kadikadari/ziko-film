@@ -6,16 +6,21 @@ const series = [
 function showSeriesFilms() {
     const container = document.getElementById("film-container");
     container.innerHTML = ""; // مسح الحاوية
-    seriesFilms.forEach(film => {
-        const filmElement = document.createElement("img");
-        filmElement.src = film.image;
-        filmElement.alt = film.title;
-        filmElement.classList.add("film-image");
-        filmElement.onclick = () => openVideoPage(film.url);
-        container.appendChild(filmElement);
+    series.forEach(serie => {
+        const serieElement = document.createElement("img");
+        serieElement.src = serie.image;
+        serieElement.alt = serie.title;
+        serieElement.classList.add("film-image");
+
+        // إضافة رابط للتوجيه إلى ملف HTML عند الضغط على الصورة
+        const link = document.createElement("a");
+        link.href = serie.url;
+        link.target = "_blank"; // فتح الرابط في نافذة جديدة
+        link.appendChild(serieElement);
+        
+        container.appendChild(link);
     });
 }
 
-
-// استدعاء الدالة لعرض الأفلام
-showAsianFilms();
+// استدعاء الدالة لعرض المسلسلات
+showSeriesFilms();
