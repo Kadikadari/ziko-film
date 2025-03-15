@@ -63,7 +63,7 @@ const films = {
     ], 
     indian: [ 
         { title: "Pad Man  ", image: "images/Pad Man.jpg", url: "https://www.ok.ru/videoembed/1116129790703" }, 
-         { title: "Dunki  ", image: "images/Dunki.jpg", url: "dunki.html" }, 
+         { title: "Dunki  ", image: "images/Dunki.jpg", url: "https://ok.ru/videoembed/10123617766037" }, 
          { title: "Anokhi  ", image: "images/Anokhi.jpg", url: "https://ok.ru/videoembed/9601974667883" }, 
          { title: "Rebel  ", image: "images/Rebel.jpg", url: "https://ok.ru/videoembed/9602752514667" }, 
          { title: "Joshua  ", image: "images/Joshua.jpg", url: "https://ok.ru/videoembed/9602129726059" }, 
@@ -101,7 +101,6 @@ const films = {
     ],
     home: [ // أفلام خاصة بالصفحة الرئيسية
         { title: "فيلم مميز 1", image: "images/blu.jpg", url: "https://ok.ru/videoembed/2950580537963" },
-         { title: "Dunki  ", image: "images/Dunki.jpg", url: "dunki.html" }, 
         { title: "pawn   ", image: "images/pawn.jpg", url: "https://www.ok.ru/videoembed/8137393638069" }, 
          { title: " gran  ", image: "images/gran.jpg", url: "https://ok.ru/videoembed/7085340166806" },
          { title: " Chihiro ", image: "images/Chihiro.jpg", url: "https://ok.ru/videoembed/6382795360989" },
