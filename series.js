@@ -1,5 +1,5 @@
 const series = [
-    { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "نور خالد.html" }, 
+    { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "nor xaled.html" }, 
     { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "ghowar.html" }
 ];
 
