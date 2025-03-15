@@ -129,4 +129,13 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #666;
     transform: scale(1.05);
+
+}
+
+nav ul li a {
+    transition: text-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* ظل أبيض حول النص */
 }
