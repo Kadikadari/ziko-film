@@ -14,9 +14,9 @@ function showSeriesFilms() {
         serieElement.classList.add("film-image");
 
         // عند الضغط على الصورة يتم توجيه المستخدم إلى صفحة المسلسل المستقل
-        serieElement.onclick = function() {
-            window.location.href = serie.url; // فتح صفحة المسلسل في نفس النافذة
-        };
+      serieElement.onclick = function() {
+    window.location.assign(serie.url); // فتح صفحة المسلسل باستخدام assign
+};
 
         container.appendChild(serieElement);
     });
