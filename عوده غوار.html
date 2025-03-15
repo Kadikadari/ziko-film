@@ -1,37 +1,74 @@
-const indianFilms = [
-    { title: "Pad Man", image: "images/Pad Man.jpg", url: "https://www.ok.ru/videoembed/1116129790703" }, 
-    { title: "Anokhi", image: "images/Anokhi.jpg", url: "https://ok.ru/videoembed/9601974667883" }, 
-    { title: "Rebel", image: "images/Rebel.jpg", url: "https://ok.ru/videoembed/9602752514667" }, 
-    { title: "Joshua", image: "images/Joshua.jpg", url: "https://ok.ru/videoembed/9602129726059" }, 
-    { title: "Bhairavakona", image: "images/Bhairavakona.jpg", url: "https://ok.ru/video/22348" }, 
-    { title: "The Goat Life 2024", image: "images/The.Goat.Life.2024.jpg", url: "https://ok.ru/videoembed/7098530335327" }, 
-    { title: "Kabali", image: "images/Kabali.jpg", url: "https://ok.ru/videoembed/9684984924779" }, 
-    { title: "Khiladi", image: "images/Khiladi.jpg", url: "https://ok.ru/videoembed/9682624645739" }, 
-    { title: "Pyaari", image: "images/Pyaari.jpg", url: "https://ok.ru/videoembed/9545487354475" }, 
-    { title: "Nanna", image: "images/Nanna.jpg", url: "https://ok.ru/videoembed/9545239759467" }, 
-    { title: "Hanuman", image: "images/Hanuman.jpg", url: "https://ok.ru/videoembed/9545069693547" }, 
-    { title: "Maaya", image: "images/Maaya.jpg", url: "https://ok.ru/videoembed/9673437743723" }, 
-    { title: "Meiyazhagan", image: "images/Meiyazhagan.jpg", url: "https://ok.ru/videoembed/8441740921470" }, 
-    { title: "Saindhav", image: "images/Saindhav.jpg", url: "https://ok.ru/videoembed/10245762779755" } 
-];
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسلسل 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"> 
+</head>
+<body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
+    <h1>مسلسل نور خالد وولده - </h1>
+    
+    <div id="episode-list" class="film-container"></div>
+    
+    <script>
+        const episodes = [
+            { title: "الحلقة 1", url: "https://ok.ru/videoembed/1566062545609" },
+            { title: "الحلقة 2", url: "https://ok.ru/videoembed/1566061562569" },
+            { title: "الحلقة 3", url: "https://ok.ru/videoembed/1566062480073" },
+            { title: "الحلقة 4", url: "https://ok.ru/videoembed/1566062414537" },
+            { title: "الحلقة 5", url: "https://ok.ru/videoembed/1566062283465" },
+            { title: "الحلقة 6", url: "https://ok.ru/videoembed/1566061824713" },
+            { title: "الحلقة 7", url: "https://ok.ru/videoembed/1566061365961" },
+            { title: "الحلقة 8", url: "https://ok.ru/videoembed/1566061169353" },
+            { title: "الحلقة 9", url: "https://ok.ru/videoembed/1566061759177" },
+            { title: "الحلقة 10", url: "https://ok.ru/videoembed/1566061693641" },
+            { title: "الحلقة 11", url: "https://ok.ru/videoembed/1566061955785" },
+            { title: "الحلقة 12", url: "https://ok.ru/videoembed/1566062021321" },
+            { title: "الحلقة 13", url: "https://ok.ru/videoembed/1566061431497" },
+            { title: "الحلقة 14", url: "https://ok.ru/videoembed/1566061890249" },
+            { title: "الحلقة 15", url: "https://ok.ru/videoembed/1566062086857" },
+            { title: "الحلقة 16", url: "https://ok.ru/videoembed/1566061234889" },
+            { title: "الحلقة 17", url: "https://ok.ru/videoembed/1566061497033" },
+            { title: "الحلقة 18", url: "https://ok.ru/videoembed/1566062217929" },
+            { title: "الحلقة 19", url: "https://ok.ru/videoembed/1566061628105" },
+            { title: "الحلقة 20", url: "https://ok.ru/videoembed/1566061300425" },
+            { title: "الحلقة 21", url: "https://ok.ru/videoembed/1566062349001" },
+            { title: "الحلقة 22", url: "https://ok.ru/videoembed/1566235691721" },
+            { title: "الحلقة 23", url: "https://ok.ru/videoembed/1566235495113" },
+            { title: "الحلقة 24", url: "https://ok.ru/videoembed/1566235364041" },
+            { title: "الحلقة 25", url: "https://ok.ru/videoembed/1566235560649" },
+            { title: "الحلقة 26", url: "https://ok.ru/videoembed/1566235626185" },
+             { title: "الحلقة 27الاخيرة", url: "https://ok.ru/videoembed/1566235429577" }
+   
+        ];
 
-function showIndianFilms() {
-    const container = document.getElementById("film-container");
-    container.innerHTML = ""; // مسح الحاوية
-   indianFilms.forEach(film => {
-        const filmElement = document.createElement("img");
-        filmElement.src = film.image;
-        filmElement.alt = film.title;
-        filmElement.classList.add("film-image");
-        filmElement.onclick = () => openVideoPage(film.url);
-        container.appendChild(filmElement);
-    });
-}
+        function loadEpisodes() {
+            const container = document.getElementById("episode-list");
+            episodes.forEach(episode => {
+                const button = document.createElement("button");
+                button.textContent = episode.title;
+                button.classList.add("category-btn");
+                button.onclick = () => openVideoPage(episode.url);
+                container.appendChild(button);
+            });
+        }
 
- // عند النقر على الصورة، يتم فتح الفيديو في صفحة جديدة
-        filmElement.onclick = () => openVideoPage(film.url);
+        function openVideoPage(videoUrl) {
+            if (videoUrl) {
+                window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+            } else {
+                alert("لا يوجد رابط لهذه الحلقة!");
+            }
+        }
 
+        function goBack() {
+            window.history.back();
+        }
 
-// استدعاء الدالة لعرض الأفلام
-showAsianFilms();
-showIndianFilms();
+        document.addEventListener("DOMContentLoaded", loadEpisodes);
+    </script>
+</body>
+</html>
