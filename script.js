@@ -69,7 +69,7 @@ const films = {
          { title: " Love  ", image: "images/Love.jpg", url: "https://ok.ru/videoembed/10339550693995" } 
     ], 
     series: [ 
-        { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "نور خالد.html" }, 
+        { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "نورخالد.html" }, 
         { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عوده غوار.html" } 
     ],
     home: [ // أفلام خاصة بالصفحة الرئيسية
