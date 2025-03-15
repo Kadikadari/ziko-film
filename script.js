@@ -1,13 +1,17 @@
 // بيانات الأفلام 
 const films = { 
     arabic: [ 
-        { title: "فيلم الخط ", image: "images/xut.jpg", url: "https://ok.ru/videoembed/973282806388" }, 
-        { title: "فيلم شماريخ ", image: "images/شماريخ.jpg", url: "https://vkvideo.ru/video_ext.php?oid=760447746&id=456239383&hash=10d0ecac9fdc52b1" }, 
-        { title: "فيلم كركون الشارع ", image: "images/كركون.jpg", url: "https://ok.ru/videoembed/979790137972" }, 
-        { title: "فيلم مرجان ", image: "images/مرجان.jpg", url: "https://ok.ru/videoembed/980295092852" } 
+        { title: " البداية ", image: "images/البداية.jpg", url: "https://ok.ru/videoembed/1718394489346" }, 
+        { title: " Jazeerat ", image: "images/Jazeerat.jpg", url: "https://ok.ru/videoembed/9381097704053" },
+         { title: " البداية ", image: "images/البداية.jpg", url: "https://ok.ru/videoembed/1718394489346" },
+         { title: " البداية ", image: "images/البداية.jpg", url: "https://ok.ru/videoembed/1718394489346" }
+       
     ], 
     foreign: [ 
         { title: "blu  ", image: "images/blu.jpg", url: "https://ok.ru/videoembed/2950580537963" }, 
+         { title: "Dunki  ", image: "images/Dunki.jpg", url: "https://uqload.to/embed-of3eu17ykljf.html?st=4N3I0e3QWPcUMUTVesVdhw&e=1740986747" }, 
+        { title: "pawn   ", image: "images/pawn.jpg", url: "https://www.ok.ru/videoembed/8137393638069" }, 
+         { title: " gran  ", image: "images/gran.jpg", url: "https://ok.ru/videoembed/7085340166806" },
         { title: " pure lucke ", image: "images/pure.jpg", url: "https://ok.ru/videoembed/6106193922801" },
         { title: " shawshank ", image: "images/shawshenk.jpg", url: "https://www.ok.ru/videoembed/8281347918517" },
         { title: " cast away ", image: "images/cast.jpg", url: "https://ok.ru/videoembed/4342255258133" },
@@ -17,6 +21,9 @@ const films = {
         { title: " survivants ", image: "images/survivants.jpg", url: "https://www.ok.ru/videoembed/8179675695797" },
         { title: " true spirit ", image: "images/true spirit.jpg", url: "https://www.ok.ru/videoembed/7983728364213" },
         { title: " rango ", image: "images/rango.jpg", url: "https://www.ok.ru/videoembed/8298574187189" },
+          { title: " sunnnshine  ", image: "images/sunnnshine.jpg", url: "https://ok.ru/videoembed/6954280290966" },
+         { title: " Management ", image: "images/Management.jpg", url: "https://ok.ru/videoembed/5577057307255" },
+         { title: " Showtime  ", image: "images/Showtime.jpg", url: "https://ok.ru/videoembed/1942340242046" },
         { title: " the mountain ", image: "images/the mountain.jpg", url: "https://www.ok.ru/videoembed/2524987787939" },
         { title: "free gaye  ", image: "images/free gaye.jpg", url: "https://www.ok.ru/videoembed/8103229524661" }, 
         { title: " Bookworm", image: "images/Bookworm.jpg", url: "https://ok.ru/videoembed/8965706222187" },
@@ -58,6 +65,7 @@ const films = {
     asian: [ 
          { title: "Summer   ", image: "images/Summer.jpg", url: "https://ok.ru/videoembed/10339495578219" },
         { title: "Sleeping ", image: "images/Sleeping.jpg", url: "https://ok.ru/videoembed/10017893583467" }, 
+         { title: "pawn   ", image: "images/pawn.jpg", url: "https://www.ok.ru/videoembed/8137393638069" }, 
         { title: "Yoko ", image: "images/Yoko.jpg", url: "https://ok.ru/videoembed/10018058078827" },
         { title: "Pilot   ", image: "images/Pilot.jpg", url: "https://ok.ru/videoembed/10016805423723" },
         { title: "  April", image: "images/April.jpg", url: "https://ok.ru/videoembed/10015339514475" },
@@ -66,6 +74,8 @@ const films = {
         { title: "After   ", image: "images/After.jpg", url: "https://ok.ru/videoembed/1898796157529" },
         { title: " Sukdulan ", image: "images/Sukdulan.jpg", url: "https://ok.ru/videoembed/10207481891435" },
         { title: "Karakai   ", image: "images/Karakai.jpg", url: "https://ok.ru/videoembed/10339519105643" },
+        { title: " Lov-and ", image: "images/Lov-and.jpg", url: "https://ok.ru/videoembed/8898080475755" },
+          { title: " Chihiro ", image: "images/Chihiro.jpg", url: "https://ok.ru/videoembed/6382795360989" },
          { title: " Love  ", image: "images/Love.jpg", url: "https://ok.ru/videoembed/10339550693995" } 
     ], 
     series: [ 
@@ -74,7 +84,16 @@ const films = {
     ],
     home: [ // أفلام خاصة بالصفحة الرئيسية
         { title: "فيلم مميز 1", image: "images/blu.jpg", url: "https://ok.ru/videoembed/2950580537963" },
+         { title: "Dunki  ", image: "images/Dunki.jpg", url: "https://uqload.to/embed-of3eu17ykljf.html?st=4N3I0e3QWPcUMUTVesVdhw&e=1740986747" }, 
+        { title: "pawn   ", image: "images/pawn.jpg", url: "https://www.ok.ru/videoembed/8137393638069" }, 
+         { title: " gran  ", image: "images/gran.jpg", url: "https://ok.ru/videoembed/7085340166806" },
+         { title: " Chihiro ", image: "images/Chihiro.jpg", url: "https://ok.ru/videoembed/6382795360989" },
+         { title: " Finch ", image: "images/Finch.jpg", url: "https://ok.ru/videoembed/8842043263677" },
+         { title: " sunnnshine  ", image: "images/sunnnshine.jpg", url: "https://ok.ru/videoembed/6954280290966" },
+         { title: " Management ", image: "images/Management.jpg", url: "https://ok.ru/videoembed/5577057307255" },
+         { title: " Showtime  ", image: "images/Showtime.jpg", url: "https://ok.ru/videoembed/1942340242046" },
         { title: "فيلم مميز 2", image: "images/mstrchersh.jpg", url: "https://ok.ru/videoembed/1264989833844" },
+         { title: "Jules   ", image: "images/Jules.jpg", url: "https://ok.ru/videoembed/10399934646891" } ,
         { title: "فيلم مميز 3", image: "images/xut.jpg", url: "https://ok.ru/videoembed/973282806388" }
     ]
 }; 
