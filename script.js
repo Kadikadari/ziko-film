@@ -10,6 +10,29 @@ const series = [
     { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "ghowar.html" }
 ];
 
+ break;
+        case 'arabic':
+            showArabicFilms(); // عرض الأفلام العربية
+            break;
+        case 'foreign':
+            showForeignFilms(); // عرض الأفلام الأجنبية
+            break;
+        case 'turkish':
+            showTurkishFilms(); // عرض الأفلام التركية
+            break;
+        case 'indian':
+            showIndianFilms(); // عرض الأفلام الهندية
+            break;
+        case 'asian':
+            showAsianFilms(); // عرض الأفلام الآسيوية
+
+
+
+
+
+
+
+
 // دالة عامة لإنشاء وعرض الأفلام أو المسلسلات
 function displayItems(items) {
     const container = document.getElementById("film-container");
