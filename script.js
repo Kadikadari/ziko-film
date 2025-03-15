@@ -5,91 +5,55 @@ const homeFilms = [
     { title: "فيلم مرجان", image: "images/مرجان.jpg", url: "https://ok.ru/videoembed/980295092852" }
 ];
 
-// دالة لعرض الأفلام الرئيسية
-function showHomeFilms() {
-    const container = document.getElementById("film-container");
-    container.innerHTML = ""; // مسح الحاوية
-    homeFilms.forEach(film => {
-        const filmElement = document.createElement("img");
-        filmElement.src = film.image;
-        filmElement.alt = film.title;
-        filmElement.classList.add("film-image");
-        filmElement.onclick = () => openVideoPage(film.url);
-        container.appendChild(filmElement);
-    });
-}
-
 const series = [
-    { title: "مسلسل 1", image: "images/series1.jpg", url: "https://ok.ru/video/112233" },
-    { title: "مسلسل 2", image: "images/series2.jpg", url: "https://ok.ru/video/112234" }
+    { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "nor-xaled.html" },
+    { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "ghowar.html" }
 ];
 
-// دالة لعرض المسلسلات
-function showSeries() {
+// دالة عامة لإنشاء وعرض الأفلام أو المسلسلات
+function displayItems(items) {
     const container = document.getElementById("film-container");
-    container.innerHTML = ""; // مسح الحاوية
-    series.forEach(serie => {
-        const serieElement = document.createElement("img");
-        serieElement.src = serie.image;
-        serieElement.alt = serie.title;
-        serieElement.classList.add("film-image");
-        serieElement.onclick = () => openVideoPage(serie.url);
-        container.appendChild(serieElement);
+    container.innerHTML = ""; // مسح الحاوية قبل الإضافة
+    
+    items.forEach(item => {
+        const linkElement = document.createElement("a");
+        linkElement.href = item.url;
+        linkElement.classList.add("film-link");
+
+        const itemElement = document.createElement("img");
+        itemElement.src = item.image;
+        itemElement.alt = item.title;
+        itemElement.classList.add("film-image");
+        
+        linkElement.appendChild(itemElement);
+        container.appendChild(linkElement);
     });
 }
 
-// دالة لعرض الأفلام بناءً على الفئة المحددة
+// دالة لعرض المحتوى حسب الفئة
 function showCategory(category) {
-    const container = document.getElementById("film-container");
-    container.innerHTML = ""; // مسح المحتوى الحالي قبل إضافة محتوى جديد
-
-    // تحديد الدالة المناسبة بناءً على الفئة
     switch (category) {
         case 'home':
-            showHomeFilms(); // عرض الأفلام الرئيسية
-            break;
-        case 'arabic':
-            showArabicFilms(); // عرض الأفلام العربية
-            break;
-        case 'foreign':
-            showForeignFilms(); // عرض الأفلام الأجنبية
-            break;
-        case 'turkish':
-            showTurkishFilms(); // عرض الأفلام التركية
-            break;
-        case 'indian':
-            showIndianFilms(); // عرض الأفلام الهندية
-            break;
-        case 'asian':
-            showAsianFilms(); // عرض الأفلام الآسيوية
+            displayItems(homeFilms);
             break;
         case 'series':
-            showSeries(); // عرض المسلسلات
+            displayItems(series);
             break;
         default:
             console.error('فئة غير معروفة');
     }
 }
 
-// دالة لفتح صفحة الفيديو عند النقر على الفيلم
-function openVideoPage(videoUrl) {
-    if (videoUrl) {
-        window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`; // الانتقال إلى صفحة الفيديو
-    } else {
-        alert("لا يوجد رابط لهذا الفيديو!"); // إذا لم يكن الرابط موجودًا
-    }
-}
-
 // دالة للرجوع إلى الصفحة السابقة أو الرئيسية
 function goBack() {
     if (window.history.length > 1) {
-        history.back(); // العودة للصفحة السابقة
+        history.back();
     } else {
-        window.location.href = "index.html"; // العودة إلى الصفحة الرئيسية
+        window.location.href = "index.html";
     }
 }
 
 // تحميل الصفحة الرئيسية عند تشغيل الموقع
 document.addEventListener("DOMContentLoaded", () => {
-    showCategory('home'); // تحميل الأفلام الرئيسية عند تحميل الصفحة
+    showCategory('home'); // عرض الأفلام الرئيسية عند التحميل
 });
