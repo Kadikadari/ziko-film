@@ -4,6 +4,7 @@ const films = {
         { title: " البداية ", image: "images/البداية.jpg", url: "https://ok.ru/videoembed/1718394489346" }, 
         { title: " Jazeerat ", image: "images/Jazeerat.jpg", url: "https://ok.ru/videoembed/2150438079177" },
          { title: " كفرون ", image: "images/كفرون.jpg", url: "https://ok.ru/videoembed/1718394489346" },
+         { title: " الحدود ", image: "images/الحدود.jpg", url: "https://ok.ru/videoembed/33211419271" },
         { title: " طلعت  ", image: "images/طلعت.jpg", url: "https://ok.ru/videoembed/3705485920969" },
         { title: " نوتردام ", image: "images/نوتردام.jpg", url: "https://ok.ru/videoembed/3705057774281" },
         { title: " ياصحبي ", image: "images/ياصحبي.jpg", url: "https://ok.ru/videoembed/2152643693257" },
@@ -23,6 +24,13 @@ const films = {
         { title: " معالي ", image: "images/معالي.jpg", url: "https://ok.ru/videoembed/2152410712777" },
         { title: " عمارة ", image: "images/عمارة.jpg", url: "https://ok.ru/videoembed/5044638845519" },
          { title: " كلنا لصوص ", image: "images/كلنا لصوص.jpg", url: "https://ok.ru/videoembed/1019290192500" },
+        { title: " الابيض  ", image: "images/الابيض.jpg", url: "https://ok.ru/videoembed/33248905863" },
+        { title: " العربى  ", image: "images/العربى.jpg", url: "https://ok.ru/videoembed/33229310599" },
+        { title: " الراعي  ", image: "images/الراعي.jpg", url: "https://ok.ru/videoembed/33211484807" },
+        { title: " السلم والثعبان ", image: "images/السلم والثعبان.jpg", url: "https://ok.ru/videoembed/33248971399" },
+        { title: " فوضى ", image: "images/فوضى.jpg", url: "https://ok.ru/videoembed/33190578823" },
+        { title: " نمس  ", image: "images/نمس.jpg", url: "https://ok.ru/videoembed/33139198599" },
+        { title: " مناحى ", image: "images/مناحى.jpg", url: "https://ok.ru/videoembed/33168034439" },
          { title: " كلمني ", image: "images/كلمني.jpg", url: "https://ok.ru/videoembed/2150439455433" }
        
     ], 
