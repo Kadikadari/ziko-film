@@ -22,6 +22,7 @@ const films = {
         { title: " كركر ", image: "images/كركر.jpg", url: "https://ok.ru/videoembed/2150439062217" },
         { title: " معالي ", image: "images/معالي.jpg", url: "https://ok.ru/videoembed/2152410712777" },
         { title: " عمارة ", image: "images/عمارة.jpg", url: "https://ok.ru/videoembed/5044638845519" },
+         { title: " كلنا لصوص ", image: "images/كلنا لصوص.jpg", url: "https://ok.ru/videoembed/1019290192500" },
          { title: " كلمني ", image: "images/كلمني.jpg", url: "https://ok.ru/videoembed/2150439455433" }
        
     ], 
