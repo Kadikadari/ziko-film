@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسلسل 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"> 
+</head>
+<body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
+    <h1>    ذئاب الليل  </h1>
+    
+    <div id="episode-list" class="film-container"></div>
+    
+    <script>
+        const episodes = [
+            { title: "الحلقة 1", url: "https://ok.ru/videoembed/7048952023631" },
+            { title: "الحلقة 2", url: "https://ok.ru/videoembed/7050103491151" },
+            { title: "الحلقة 3", url: "https://ok.ru/videoembed/7061464222287" },
+            { title: "الحلقة 4", url: "https://ok.ru/videoembed/7067099073103" },
+            { title: "الحلقة 5", url: "https://ok.ru/videoembed/7067099466319" },
+            { title: "الحلقة 6", url: "https://ok.ru/videoembed/7067766426191" },
+            { title: "الحلقة 7", url: "https://ok.ru/videoembed/7080895646287" },
+            { title: "الحلقة 8", url: "https://ok.ru/videoembed/7104880642639" },
+            { title: "الحلقة 9", url: "https://ok.ru/videoembed/7104905742927" },
+            { title: "الحلقة 10", url: "https://ok.ru/videoembed/7104922716751" },
+            { title: "الحلقة 11", url: "https://ok.ru/videoembed/7122314529359" },
+            { title: "الحلقة 12", url: "https://ok.ru/videoembed/7122316560975" },
+            { title: "الحلقة 13", url: "https://ok.ru/videoembed/7126080883279" },
+            { title: "الحلقة 14", url: "https://ok.ru/videoembed/7128262904399" },
+            { title: "الحلقة 15", url: "https://ok.ru/videoembed/7134408280655" },
+            { title: "الحلقة 16", url: "https://ok.ru/videoembed/7146548693583" },
+            { title: "الحلقة 17", url: "https://ok.ru/videoembed/7160901798479" },
+            { title: "الحلقة 18", url: "https://ok.ru/videoembed/7160638409295" },
+            { title: "الحلقة 19", url: "https://ok.ru/videoembed/7175749044815" },
+            { title: "الحلقة 20", url: "https://ok.ru/videoembed/7176339327567" },
+            { title: "الحلقة 21", url: "https://ok.ru/videoembed/7179663116879" },
+            { title: "الحلقة 22", url: "https://ok.ru/videoembed/7179988437583" },
+            { title: "الحلقة 23", url: "https://ok.ru/videoembed/7186646239823" },
+            { title: "الحلقة 24", url: "https://ok.ru/videoembed/7186616486479" },
+            { title: "الحلقة 25", url: "https://ok.ru/videoembed/7186737400399" },
+            { title: "الحلقة 26", url: "https://ok.ru/videoembed/7189308639823" },
+            { title: "الحلقة 27", url: "https://ok.ru/videoembed/7203679242831" },
+            { title: "الحلقة 28الاخيرة", url: "https://ok.ru/videoembed/7196736096847" }
+   
+        ];
+
+        function loadEpisodes() {
+            const container = document.getElementById("episode-list");
+            episodes.forEach(episode => {
+                const button = document.createElement("button");
+                button.textContent = episode.title;
+                button.classList.add("category-btn");
+                button.onclick = () => openVideoPage(episode.url);
+                container.appendChild(button);
+            });
+        }
+
+        function openVideoPage(videoUrl) {
+            if (videoUrl) {
+                window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+            } else {
+                alert("لا يوجد رابط لهذه الحلقة!");
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadEpisodes);
+    </script>
+</body>
+</html>
