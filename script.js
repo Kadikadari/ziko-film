@@ -101,7 +101,7 @@ const films = {
          { title: "بقعه ضوء  ", image: "images/بقعة.jpg", url: "بقعة ضوء .html" },
           { title: "خمس نجوم  ", image: "images/خمس نجوم.jpg", url: "5نجوم.html" },
          { title: "الواق  ", image: "images/الواق.jpg", url: "الواق واق.html" },
-        { title: "زرق ورق  ", image: "images/زرق ورق.jpg", url: "زرق ورق.html" },
+        { title: " ذئاب الليل  ", image: "images/ذئاب الليل.jpg", url: "ذئاب الليل.html" },
           { title: " غرباء  ", image: "images/غرباء.jpg", url: " غرباء.html" },
         { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عوده غوار.html" } 
     ],
