@@ -97,10 +97,11 @@ const films = {
     ], 
     series: [ 
         { title: "مسلسل نور خالد", image: "images/o3407508_16666602.jpg", url: "نورخالد.html" }, 
-         { title: "الخربه  ", image: "images/الخربه.jpg", url: "الخربة.html" },
+         { title: " الخربه  ", image: "images/الخربه.jpg", url: " الخربة.html" },
          { title: "بقعه ضوء  ", image: "images/بقعة.jpg", url: "بقعة ضوء .html" },
           { title: "خمس نجوم  ", image: "images/خمس نجوم.jpg", url: "5نجوم.html" },
          { title: "الواق  ", image: "images/الواق.jpg", url: "الواق واق.html" },
+        { title: "زرق ورق  ", image: "images/الخربه.jpg", url: "زرق ورق.html" },
         { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عوده غوار.html" } 
     ],
     home: [ // أفلام خاصة بالصفحة الرئيسية
