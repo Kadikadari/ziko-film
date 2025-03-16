@@ -118,6 +118,9 @@ nav ul li {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* تقليل الحد الأدنى للعرض على الشاشات الصغيرة */
     }
 }
+.film-container img {
+    will-change: transform, box-shadow;
+}
 
 /* إضافة تأثيرات على الأزرار داخل التنقل */
 nav ul li a {
