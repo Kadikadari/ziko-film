@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسلسل 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"> 
+</head>
+<body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
+    <h1>   غرباء  </h1>
+    
+    <div id="episode-list" class="film-container"></div>
+    
+    <script>
+        const episodes = [
+            { title: "الحلقة 1", url: "https://ok.ru/videoembed/6115883354703" },
+            { title: "الحلقة 2", url: "https://ok.ru/videoembed/6133851163215" },
+            { title: "الحلقة 3", url: "https://ok.ru/videoembed/6139521272399" },
+            { title: "الحلقة 4", url: "https://ok.ru/videoembed/6145752435279" },
+            { title: "الحلقة 5", url: "https://ok.ru/videoembed/6193550527055" },
+            { title: "الحلقة 6", url: "https://ok.ru/videoembed/6206889921103" },
+            { title: "الحلقة 7", url: "https://ok.ru/videoembed/6255624522319" },
+            { title: "الحلقة 8", url: "https://ok.ru/videoembed/6341610834511" },
+            { title: "الحلقة 9", url: "https://ok.ru/videoembed/6341693475407" },
+            { title: "الحلقة 10", url: "https://ok.ru/videoembed/6436045720143" },
+            { title: "الحلقة 11", url: "https://ok.ru/videoembed/6445225609807" },
+            { title: "الحلقة 12الاخيرة", url: "https://ok.ru/videoembed/6561954531919" }
+   
+        ];
+
+        function loadEpisodes() {
+            const container = document.getElementById("episode-list");
+            episodes.forEach(episode => {
+                const button = document.createElement("button");
+                button.textContent = episode.title;
+                button.classList.add("category-btn");
+                button.onclick = () => openVideoPage(episode.url);
+                container.appendChild(button);
+            });
+        }
+
+        function openVideoPage(videoUrl) {
+            if (videoUrl) {
+                window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+            } else {
+                alert("لا يوجد رابط لهذه الحلقة!");
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadEpisodes);
+    </script>
+</body>
+</html>
