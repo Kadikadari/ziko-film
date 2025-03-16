@@ -102,7 +102,7 @@ const films = {
           { title: "خمس نجوم  ", image: "images/خمس نجوم.jpg", url: "5نجوم.html" },
          { title: "الواق  ", image: "images/الواق.jpg", url: "الواق واق.html" },
         { title: "زرق ورق  ", image: "images/زرق ورق.jpg", url: "زرق ورق.html" },
-          { title: " زرق ورق2  ", image: "images/زرق ورق2.jpg", url: " زرق ورق2.html" },
+          { title: " غرباء  ", image: "images/غرباء.jpg", url: " غرباء.html" },
         { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عوده غوار.html" } 
     ],
     home: [ // أفلام خاصة بالصفحة الرئيسية
