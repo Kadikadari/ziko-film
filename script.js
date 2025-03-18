@@ -175,6 +175,8 @@ const films = {
          { title: "الواق  ", image: "images/الواق.jpg", url: "الواق واق.html" },
         { title: " ذئاب الليل  ", image: "images/ذئاب الليل.jpg", url: "ذئاب الليل.html" },
           { title: " غرباء  ", image: "images/غرباء.jpg", url: " غرباء.html" },
+        { title: " راس الغول  ", image: "images/راس الغول.jpg", url: " راس الغول.html" },
+        { title: "  الصعلوك  ", image: "images/الصعلوك.jpg", url: " الصعلوك.html" },
         { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عوده غوار.html" } 
     ],
     home: [ // أفلام خاصة بالصفحة الرئيسية
