@@ -154,7 +154,19 @@ function showCategory(category) {
     });
 }
 
-
+  // الحصول على اسم التصنيف المناسب
+function getCategoryTitle(category) {
+    switch (category) {
+      case 'arabic': return 'أفلام عربي';
+        case 'foreign': return 'أفلام أجنبي';
+        case 'turkish': return 'أفلام تركي';
+        case 'indian': return 'أفلام هندي';
+        case 'asian': return 'أفلام أسيوي';
+        case 'series': return 'مسلسلات';
+        case 'home': return 'الرئيسية';
+        default: return '';
+    }
+}
 
 // فتح صفحة تشغيل الفيديو
 function openVideoPage(videoUrl) {
