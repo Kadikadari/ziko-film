@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسلسل 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"> 
+</head>
+<body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
+    <h1>   راس الغول  </h1>
+    
+    <div id="episode-list" class="film-container"></div>
+    
+    <script>
+        const episodes = [
+            { title: "الحلقة 1", url: "https://ok.ru/videoembed/1163499407988" },
+            { title: "الحلقة 2", url: "https://ok.ru/videoembed/1163499276916" },
+            { title: "الحلقة 3", url: "https://ok.ru/videoembed/1163499211380" },
+            { title: "الحلقة 4", url: "https://ok.ru/videoembed/1163498949236" },
+            { title: "الحلقة 5", url: "https://ok.ru/videoembed/1163498752628" },
+            { title: "الحلقة 6", url: "https://ok.ru/videoembed/1163498228340" },
+            { title: "الحلقة 7", url: "https://ok.ru/videoembed/1163495737972" },
+            { title: "الحلقة 8", url: "https://ok.ru/videoembed/1163495475828" },
+            { title: "الحلقة 9", url: "https://ok.ru/videoembed/1163495148148" },
+            { title: "الحلقة 10", url: "https://ok.ru/videoembed/1163494951540" },
+            { title: "الحلقة 11", url: "https://ok.ru/videoembed/1163494820468" },
+            { title: "الحلقة 12", url: "https://ok.ru/videoembed/1163494558324" },
+            { title: "الحلقة 13", url: "https://ok.ru/videoembed/1163494296180" },
+            { title: "الحلقة 14", url: "https://ok.ru/videoembed/1163457858164" },
+            { title: "الحلقة 15", url: "https://ok.ru/videoembed/1163457530484" },
+            { title: "الحلقة 16", url: "https://ok.ru/videoembed/1163677010548" },
+            { title: "الحلقة 17", url: "https://ok.ru/videoembed/1163457071732" },
+            { title: "الحلقة 18", url: "https://ok.ru/videoembed/1163456744052" },
+            { title: "الحلقة 19", url: "https://ok.ru/videoembed/1163456481908" },
+            { title: "الحلقة 20", url: "https://ok.ru/videoembed/1163403856500" },
+            { title: "الحلقة 21", url: "https://ok.ru/videoembed/1163403659892" },
+            { title: "الحلقة 22", url: "https://ok.ru/videoembed/1163387865716" },
+            { title: "الحلقة 23", url: "https://ok.ru/videoembed/1163387734644" },
+            { title: "الحلقة 24", url: "https://ok.ru/videoembed/1163387603572" },
+            { title: "الحلقة 25", url: "https://ok.ru/videoembed/1163293821556" },
+            { title: "الحلقة 26", url: "https://ok.ru/videoembed/1163293756020" },
+            { title: "الحلقة 27", url: "https://ok.ru/videoembed/1163293297268" },
+            { title: "الحلقة 28", url: "https://ok.ru/videoembed/1163293231732" },
+            { title: "الحلقة 29", url: "https://ok.ru/videoembed/1163293035124" },
+            { title: "الحلقة 30الاخيرة", url: "https://ok.ru/videoembed/1163292838516" }
+   
+        ];
+
+        function loadEpisodes() {
+            const container = document.getElementById("episode-list");
+            episodes.forEach(episode => {
+                const button = document.createElement("button");
+                button.textContent = episode.title;
+                button.classList.add("category-btn");
+                button.onclick = () => openVideoPage(episode.url);
+                container.appendChild(button);
+            });
+        }
+
+        function openVideoPage(videoUrl) {
+            if (videoUrl) {
+                window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+            } else {
+                alert("لا يوجد رابط لهذه الحلقة!");
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadEpisodes);
+    </script>
+</body>
+</html>
