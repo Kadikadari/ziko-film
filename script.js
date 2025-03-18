@@ -31,6 +31,18 @@ const films = {
         { title: " فوضى ", image: "images/فوضى.jpg", url: "https://ok.ru/videoembed/33190578823" },
         { title: " نمس  ", image: "images/نمس.jpg", url: "https://ok.ru/videoembed/33139198599" },
         { title: " مناحى ", image: "images/مناحى.jpg", url: "https://ok.ru/videoembed/33168034439" },
+        { title: " صح النوم ", image: "images/صح النوم.jpg", url: "https://ok.ru/videoembed/33439025799" },
+         { title: " المتسول ", image: "images/المتسول.jpg", url: "https://ok.ru/videoembed/33413597831" },
+        { title: " المشبوه  ", image: "images/المشبوه.jpg", url: "https://ok.ru/videoembed/33451608711" },
+        { title: " ابن عز ", image: "images/ابن عز.jpg", url: "https://ok.ru/videoembed/33280297607" },
+        { title: " ارض الخوف ", image: "images/ارض الخوف.jpg", url: "https://ok.ru/videoembed/33242221191" },
+        { title: " واربع  ", image: "images/واربع.jpg", url: "https://ok.ru/videoembed/33280428679" },
+        { title: " إجرام ", image: "images/إجرام.jpg", url: "https://ok.ru/videoembed/33185008263" },
+        { title: " خلعا ", image: "images/خلعا.jpg", url: "https://ok.ru/videoembed/33274727047" },
+        { title: " عقلي ", image: "images/عقلي.jpg", url: "https://ok.ru/videoembed/33421265543" },
+        { title: " المنحوس ", image: "images/المنحوس.jpg", url: "https://ok.ru/videoembed/33446627975" },
+        { title: " المدابغ ", image: "images/المدابغ.jpg", url: "https://ok.ru/videoembed/33216596615" },
+        { title: " البلح ", image: "images/البلح.jpg", url: "https://ok.ru/videoembed/33139264135" },
          { title: " كلمني ", image: "images/كلمني.jpg", url: "https://ok.ru/videoembed/2150439455433" }
        
     ], 
