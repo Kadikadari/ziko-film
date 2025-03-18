@@ -5,51 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مشاهدة الفيلم</title>
     <style>
-        /* ... (أنماط CSS الحالية) ... */
-
-        #sidebar {
-            position: fixed;
-            top: 0;
-            right: -300px; /* إخفاء القائمة الجانبية خارج الشاشة */
-            width: 300px;
-            height: 100%;
-            background-color: #333;
+        body {
+            background-color: black;
             color: white;
-            transition: right 0.3s ease;
-            overflow-y: auto;
-            padding: 20px;
-            box-sizing: border-box;
-            z-index: 1001; /* تأكد من ظهورها فوق كل شيء */
-        }
-
-        #sidebar.open {
-            right: 0; /* إظهار القائمة الجانبية */
-        }
-
-        #sidebar ul {
-            list-style: none;
+            margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        #sidebar li {
-            padding: 10px;
-            border-bottom: 1px solid #444;
-            cursor: pointer;
-        }
-
-        #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
+        iframe {
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none; /* إخفاء الغطاء مبدئيًا */
-            z-index: 1000; /* تأكد من ظهورها تحت القائمة الجانبية */
+            border: none;
+            background-color: #000;
         }
 
-        #overlay.show {
-            display: block; /* إظهار الغطاء */
+        #back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #back-btn:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            #back-btn {
+                top: 10px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -57,50 +56,34 @@
     <button id="back-btn" onclick="goBack()">رجوع</button>
     <iframe id="video-frame" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups" referrerpolicy="no-referrer"></iframe>
 
-    <div id="sidebar">
-        <h2>قائمة الأفلام</h2>
-        <ul id="movie-list">
-            </ul>
-    </div>
-    <div id="overlay"></div>
-
     <script>
-        // ... (JavaScript الحالي) ...
+        // استخراج رابط الفيديو من عنوان URL
+        const urlParams = new URLSearchParams(window.location.search);
+        let videoUrl = urlParams.get('url');
 
-        // قائمة الأفلام (يمكنك استبدال هذه القائمة ببيانات من خادم)
-        const movies = [
-            { title: "فيلم 1", url: "رابط_الفيلم_1" },
-            { title: "فيلم 2", url: "رابط_الفيلم_2" },
-            { title: "فيلم 3", url: "رابط_الفيلم_3" },
-            // ... المزيد من الأفلام ...
-        ];
+        if (videoUrl) {
+            // التأكد من دعم التشغيل التلقائي
+            if (videoUrl.includes("?")) {
+                videoUrl += "&autoplay=1&muted=1"; 
+            } else {
+                videoUrl += "?autoplay=1&muted=1";
+            }
 
-        // ملء قائمة الأفلام في القائمة الجانبية
-        const movieList = document.getElementById("movie-list");
-        movies.forEach(movie => {
-            const li = document.createElement("li");
-            li.textContent = movie.title;
-            li.addEventListener("click", () => {
-                document.getElementById("video-frame").src = movie.url;
-                toggleSidebar(); // إغلاق القائمة الجانبية بعد اختيار الفيلم
-            });
-            movieList.appendChild(li);
-        });
-
-        // وظيفة لتبديل حالة القائمة الجانبية
-        function toggleSidebar() {
-            const sidebar = document.getElementById("sidebar");
-            const overlay = document.getElementById("overlay");
-            sidebar.classList.toggle("open");
-            overlay.classList.toggle("show");
+            // تعيين الرابط في الـ iframe
+            document.getElementById("video-frame").src = videoUrl;
+        } else {
+            alert("لم يتم العثور على رابط الفيديو!");
+            window.location.href = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية في حال عدم وجود رابط
         }
 
-        // إضافة مستمع حدث للنقر على أي مكان في الصفحة
-        document.addEventListener("click", (event) => {
-            if (!event.target.closest("#sidebar") && !event.target.closest("#back-btn")) {
-                toggleSidebar();
+        // وظيفة زر الرجوع مع التحقق من سجل التصفح
+        function goBack() {
+            if (window.history.length > 1) {
+                history.back(); 
+            } else {
+                window.location.href = "index.html"; 
             }
-        });
+        }
     </script>
 </body>
 </html>
