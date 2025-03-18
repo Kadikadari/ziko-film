@@ -76,8 +76,7 @@ const films = {
         { title: " Sharbia ", image: "images/Sharbia.jpg", url: "https://ok.ru/videoembed/7063342811743" },
         { title: " Shahd ", image: "images/Shahd.jpg", url: "https://ok.ru/videoembed/6944117099103" },
         { title: " Mo5amarat ", image: "images/Mo5amarat.jpg", url: "https://ok.ru/videoembed/6554524125791" },
-
-          { title: "  حاحا وتفاحة ", image: "images/ حاحا وتفاحة.jpg", url: "https://ok.ru/videoembed/33151060615" }, 
+        { title: "  حاحا وتفاحة ", image: "images/ حاحا وتفاحة.jpg", url: "https://ok.ru/videoembed/33151060615" }, 
         { title: " هنا وسرور ", image: "images/هنا وسرور.jpg", url: "https://ok.ru/videoembed/1228214045220" },
          { title: " رغد متوحشة ", image: "images/رغد متوحشة.jpg", url: "https://ok.ru/videoembed/1083394886180" },
          { title: " بني ادم ", image: "images/بني ادم.jpg", url: "https://ok.ru/videoembed/1225603090980" },
