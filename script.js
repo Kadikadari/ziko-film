@@ -76,7 +76,7 @@ const films = {
         { title: " Sharbia ", image: "images/Sharbia.jpg", url: "https://ok.ru/videoembed/7063342811743" },
         { title: " Shahd ", image: "images/Shahd.jpg", url: "https://ok.ru/videoembed/6944117099103" },
         { title: " Mo5amarat ", image: "images/Mo5amarat.jpg", url: "https://ok.ru/videoembed/6554524125791" },
-        { title: "  حاحا وتفاحة ", image: "images/ حاحا وتفاحة.jpg", url: "https://ok.ru/videoembed/33151060615" }, 
+        { title: "  حاحا وتفاحة ", image: "images/حاحا وتفاحة.jpg", url: "https://ok.ru/videoembed/33151060615" }, 
         { title: " هنا وسرور ", image: "images/هنا وسرور.jpg", url: "https://ok.ru/videoembed/1228214045220" },
          { title: " رغد متوحشة ", image: "images/رغد متوحشة.jpg", url: "https://ok.ru/videoembed/1083394886180" },
          { title: " بني ادم ", image: "images/بني ادم.jpg", url: "https://ok.ru/videoembed/1225603090980" },
@@ -91,7 +91,7 @@ const films = {
         { title: " يارب ولد ", image: "images/يارب ولد.jpg", url: "https://ok.ru/videoembed/33161611911" },
         { title: " واحد من الناس ", image: "images/واحد من الناس.jpg", url: "https://ok.ru/videoembed/33184025223" },
         { title: " رجب ", image: "images/رجب.jpg", url: "https://ok.ru/videoembed/33133496967" },
-        { title: "  بنت فاميليا ", image: "images/ بنت فاميليا.jpg", url: "https://ok.ru/videoembed/33177406087" },
+        { title: "  بنت فاميليا ", image: "images/بنت فاميليا.jpg", url: "https://ok.ru/videoembed/33177406087" },
         { title: " سمك لبن تمر هندى ", image: "images/سمك لبن تمر هندى.jpg", url: "https://ok.ru/videoembed/33148897927" },
          { title: " كلمني ", image: "images/كلمني.jpg", url: "https://ok.ru/videoembed/2150439455433" }
        
