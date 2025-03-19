@@ -152,8 +152,19 @@ const films = {
         { title: " أجنبي ", image: "images/mstrchersh.jpg", url: "https://ok.ru/videoembed/1264989833844" } 
     ], 
     turkish: [ 
-        { title: "فيلم تركي 1", image: "images/xut.jpg", url: "https://ok.ru/video/12348" }, 
-        { title: "فيلم تركي 2", image: "images/xut.jpg", url: "https://ok.ru/video/12349" } 
+        { title: "Anadolu", image: "images/Anadolu.jpg", url: "https://ok.ru/videoembed/1227028105764" },
+         { title: "انت منزلي", image: "images/انت منزلي.jpg", url: "https://ok.ru/videoembed/1091359345188" }, 
+         { title: "أيلا ", image: "images/أيلا.jpg", url: "https://ok.ru/videoembed/1091359476260" },
+         { title: "ترقصين ", image: "images/ترقصين.jpg", url: "https://ok.ru/videoembed/1091359083044" },
+         { title: "البنت بنتنا ", image: "images/البنت بنتنا.jpg", url: "https://ok.ru/videoembed/1091359279652" }, 
+         { title: "اللطيف ", image: "images/اللطيف.jpg", url: "https://ok.ru/videoembed/1091359017508" },
+         { title: "ازرق ازرق ", image: "images/ازرق ازرق.jpg", url: "https://ok.ru/videoembed/12270634292" },
+         { title: "حكايتنا ", image: "images/حكايتنا.jpg", url: "https://ok.ru/videoembed/2980120824370" }, 
+         { title: "فرصة ثانية ", image: "images/فرصة ثانية.jpg", url: "https://ok.ru/videoembed/2980121741874" },
+         { title: " تفاحات ", image: "images/ تفاحات.jpg", url: "https://ok.ru/videoembed/574420814340" },
+         { title: "سبات ", image: "images/سبات.jpg", url: "https://ok.ru/videoembed/896001641102" }, 
+         { title: "فاتح ", image: "images/فاتح.jpg", url: "https://ok.ru/videoembed/2200618470012" },
+        { title: " رحلة ", image: "images/ رحلة.jpg", url: "https://ok.ru/videoembed/35011824268" } 
     ], 
     indian: [ 
         { title: "Pad Man  ", image: "images/Pad Man.jpg", url: "https://www.ok.ru/videoembed/1116129790703" }, 
