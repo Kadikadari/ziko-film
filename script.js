@@ -3,6 +3,7 @@ const films = {
     arabic: [ 
         { title: " البداية ", image: "images/البداية.jpg", url: "https://ok.ru/videoembed/1718394489346" }, 
         { title: " Jazeerat ", image: "images/Jazeerat.jpg", url: "https://ok.ru/videoembed/2150438079177" },
+        { title: " طاش ", image: "images/طاش.jpg", url: "https://www.youtube.com/embed/YKcyesRfXJI?si=8qzzUsU43yOjGIjn" },
          { title: " كفرون ", image: "images/كفرون.jpg", url: "https://ok.ru/videoembed/1718394489346" },
          { title: " الحدود ", image: "images/الحدود.jpg", url: "https://ok.ru/videoembed/33211419271" },
         { title: " طلعت  ", image: "images/طلعت.jpg", url: "https://ok.ru/videoembed/3705485920969" },
