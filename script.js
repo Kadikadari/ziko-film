@@ -142,6 +142,13 @@ const films = {
         { title: "The.4.30", image: "images/The.4.30.jpg", url: "https://ok.ru/videoembed/8867243035243" },
         { title: " Saragossa ", image: "images/Saragossa.jpg", url: "https://ok.ru/videoembed/8863270111851" },
         { title: "Heaven", image: "images/Heaven.jpg", url: "https://ok.ru/videoembed/8862540958315" },
+        { title: "A Pain  ", image: "images/A Pain.jpg", url: "https://ok.ru/videoembed/8862273768043" }, 
+         { title: " My.Sons", image: "images/My.Sons.jpg", url: "https://ok.ru/videoembed/8862040459883" },
+        { title: "Bonds", image: "images/Bonds.jpg", url: "https://ok.ru/videoembed/8861907356267" },
+        { title: " Amber ", image: "images/Amber.jpg", url: "https://ok.ru/videoembed/8861880617579" },
+        { title: "Paul ", image: "images/Paul.jpg", url: "https://ok.ru/videoembed/8857520835179" },
+         { title: "Flubber ", image: "images/Flubber.jpg", url: "https://ok.ru/videoembed/8851857017451" }, 
+        { title: " Burbs", image: "images/Burbs.jpg", url: "https://ok.ru/videoembed/8852317014635" },
         { title: " أجنبي ", image: "images/mstrchersh.jpg", url: "https://ok.ru/videoembed/1264989833844" } 
     ], 
     turkish: [ 
