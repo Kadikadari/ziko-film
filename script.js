@@ -161,10 +161,10 @@ const films = {
          { title: "ازرق ازرق ", image: "images/ازرق ازرق.jpg", url: "https://ok.ru/videoembed/12270634292" },
          { title: "حكايتنا ", image: "images/حكايتنا.jpg", url: "https://ok.ru/videoembed/2980120824370" }, 
          { title: "فرصة ثانية ", image: "images/فرصة ثانية.jpg", url: "https://ok.ru/videoembed/2980121741874" },
-         { title: " تفاحات ", image: "images/ تفاحات.jpg", url: "https://ok.ru/videoembed/574420814340" },
+         { title: " تفاحات ", image: "images/تفاحات.jpg", url: "https://ok.ru/videoembed/574420814340" },
          { title: "سبات ", image: "images/سبات.jpg", url: "https://ok.ru/videoembed/896001641102" }, 
          { title: "فاتح ", image: "images/فاتح.jpg", url: "https://ok.ru/videoembed/2200618470012" },
-        { title: " رحلة ", image: "images/ رحلة.jpg", url: "https://ok.ru/videoembed/35011824268" } 
+        { title: " رحلة ", image: "images/رحلة.jpg", url: "https://ok.ru/videoembed/35011824268" } 
     ], 
     indian: [ 
         { title: "Pad Man  ", image: "images/Pad Man.jpg", url: "https://www.ok.ru/videoembed/1116129790703" }, 
