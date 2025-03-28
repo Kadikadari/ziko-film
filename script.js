@@ -210,6 +210,7 @@ const films = {
           { title: " غرباء  ", image: "images/غرباء.jpg", url: " غرباء.html" },
         { title: " راس الغول  ", image: "images/راس الغول.jpg", url: " راس الغول.html" },
         { title: "  الصعلوك  ", image: "images/الصعلوك.jpg", url: " الصعلوك.html" },
+        { title: "  روبابيكيا  ", image: "images/روبابيكيا.jpg", url: "روبابيكيا.html" },
         { title: "مسلسل عودة غوار", image: "images/عودة غوار.jpg", url: "عوده غوار.html" } 
     ],
     home: [ // أفلام خاصة بالصفحة الرئيسية
