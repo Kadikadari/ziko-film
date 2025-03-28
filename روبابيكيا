@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسلسل 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon"> 
+</head>
+<body>
+    <button id="back-btn" onclick="goBack()">رجوع</button>
+    <h1>روبابيكيا </h1>
+    
+    <div id="episode-list" class="film-container"></div>
+    
+    <script>
+        const episodes = [
+            { title: "الحلقة 1", url: "https://www.youtube.com/embed/woQPiCnk9eg?si=RVAm3shdO9I5hqYR" },
+            { title: "الحلقة 2", url: "https://www.youtube.com/embed/QWmj_4JkUmw?si=VMP4ePoOD5JnTtAG" },
+            { title: "الحلقة 3", url: "https://www.youtube.com/embed/eHF5MITvGfM?si=AZAVYJtaBanvKwg0" },
+            { title: "الحلقة 4", url: "https://www.youtube.com/embed/eHF5MITvGfM?si=MpoGtq79lauVVeeS" },
+            { title: "الحلقة 5", url: "https://www.youtube.com/embed/xDVzpnQ3uNQ?si=kAcN5z4aU_8KoUUY" },
+            { title: "الحلقة 6", url: "https://www.youtube.com/embed/g98Zw3X5Gqo?si=rS00ZJKHFw8v-o96" },
+            { title: "الحلقة 7", url: "https://www.youtube.com/embed/FN3yqXxCrRI?si=-K_pPtWAD-ya8uWr" },
+            { title: "الحلقة 8", url: "https://www.youtube.com/embed/rOPfGKbM__A?si=ZEbd7oqIpkl_sWA5" },
+            { title: "الحلقة 9", url: "https://www.youtube.com/embed/JCXd2GI82mU?si=E5G45ZrR75tPnfZx" },
+            { title: "الحلقة 10", url: "https://www.youtube.com/embed/m-feJiBSotw?si=rVbp4Np1-wbgFhNE" },
+            { title: "الحلقة 11", url: "https://www.youtube.com/embed/UNtbf6vHSo8?si=oFlFnzTViRptm2aQ" },
+            { title: "الحلقة 12", url: "https://www.youtube.com/embed/yZpNuAqD9gI?si=CQNmEKDkB7dpzT65" },
+            { title: "الحلقة 13", url: "https://www.youtube.com/embed/XGZFlpsY9M4?si=himYuc_SNDaYoktM" },
+            { title: "الحلقة 14", url: "https://www.youtube.com/embed/sSnWBNo0_Es?si=t2CRPw7C1r_oB9jQ" },
+            { title: "الحلقة 15", url: "https://www.youtube.com/embed/lxZ8PHxd_yk?si=FWBEIN98sWny4Bji" },
+            { title: "الحلقة 16", url: "https://www.youtube.com/embed/JVL_jwDDfvE?si=ad3bbJOpQTgxuRNC" },
+            { title: "الحلقة 17", url: "https://www.youtube.com/embed/oLOM73FKKeI?si=PlS9PicjwmxGqDZo" },
+            { title: "الحلقة 18", url: "https://www.youtube.com/embed/3c-VRVF34KI?si=4C6PnCDJPyNaPBmz" },
+            { title: "الحلقة 19", url: "https://www.youtube.com/embed/Y88JR9jYh2k?si=1W1vlCA7v5DFMCwP" },
+            { title: "الحلقة 20", url: "https://www.youtube.com/embed/OInwjGyQnAw?si=8M4h3aKiJNplrmvH" },
+            { title: "الحلقة 21", url: "https://www.youtube.com/embed/4_TmkHKg4e4?si=WFPJdWJX07oI6B3r" },
+            { title: "الحلقة 22الاخيرة", url: "https://www.youtube.com/embed/JJQKCJl2xVg?si=Cw4kS_Tk8iIWaDZl" }
+        ];
+
+        function loadEpisodes() {
+            const container = document.getElementById("episode-list");
+            episodes.forEach(episode => {
+                const button = document.createElement("button");
+                button.textContent = episode.title;
+                button.classList.add("category-btn");
+                button.onclick = () => openVideoPage(episode.url);
+                container.appendChild(button);
+            });
+        }
+
+        function openVideoPage(videoUrl) {
+            if (videoUrl) {
+                window.location.href = `video.html?url=${encodeURIComponent(videoUrl)}`;
+            } else {
+                alert("لا يوجد رابط لهذه الحلقة!");
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadEpisodes);
+    </script>
+</body>
+</html>
+
+
